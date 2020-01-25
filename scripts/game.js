@@ -2,7 +2,7 @@ class Game {
 
   drawPlayer();
 
-  assignControlKeys() {
+  assignControlsToKeys() {
     document.addEventListener('keydown', e => {
       switch (e.keyCode) {
         case 37: // arrow left
@@ -26,5 +26,5 @@ class Game {
 
   gameOver();
 
-  init();
+  start();
 }

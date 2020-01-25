@@ -2,30 +2,40 @@ let ctx;
 let game;
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  let canvas = document.getElementById('coordinator')
+  let canvas = document.getElementById('coordinator');
   ctx = canvas.getContext('2d');
 
-  createStartScreen(id);
+  createStartScreen() {
+    game.start();
+    const startBtn = document.getElementById('start');
+    startBtn.style = "display: none";
+  };
 
-  createGameScreen(id);
+  const startBtn = document.getElementById('start');
+  startBtn.addEventListener('click', start);
 
-  createPauseScreen(id);
+  createGameScreen();
 
-  createGameOverScreen(id);
+  createPauseScreen();
+
+  function createGameOverScreen() {
+    let gameOver = document.getElementById("gameover");
+    canvas.style = "display: none";
+    gameOver.style = "display: block";
+  };
 
   destroyStartScreen();
 
   destroyGameScreen();
 
   destroyPauseScreen(id);
-  
+
   destroyGameOverScreen();
   
   let game = new Game({
       ctx: ctx,
       this.path,
       this.player
-    });
-  game.init();
+  });
 
 })

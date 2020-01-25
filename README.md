@@ -68,18 +68,18 @@ let game = new Game({
     this.path,
     this.player
   });
-game.init();
+game.start();
 ````
 __game.js__
 ````
 function Game(options){};
 game.drawPlayer();
-game.assignControlKeys();
+game.assignControlsToKeys();
 game.generatePath();
 game.checkCollision();
 game.pause();
 game.gameOver();
-game.init();
+game.start();
 ````
 __player.js__
 ````
