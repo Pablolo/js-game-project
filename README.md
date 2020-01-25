@@ -4,9 +4,13 @@
 </p>
 
 The purpose of the game is to avoid stepping out of the way. It's a game of coordination eye-hand.
+
 The game screen will be a a moving road viewed from above.
+
 The player is represented by a dot (representing in turn a car) that moves only in horizontal each time the player clicks a button on the keyboard.
+
 The final game will consist in 2 screens (left-right) with the same layout, but with different movements of the road, with the purpose of making it a challenge to maintain both dots in the middle of the road.
+
 The game will finish at a certain point, and then the game over screen will show the percentage (%) of time that the player stepped out of the way from the start to the end, for both hands separately and altogether as well.
 
 * * *
@@ -100,11 +104,11 @@ function Path(){
 moveForward();
 ````
 ## Links
-[Coordinator 2000 Trello](https://trello.com/b/9QLvlAV0/coordinator-2000-game)
+Kanban board on... [Trello](https://trello.com/b/9QLvlAV0/coordinator-2000-game)
 
-[Github](https://github.com/Pablolo/js-game-project)
+Source code on... [Github](https://github.com/Pablolo/js-game-project)
 
-[Netlify](https://eloquent-hamilton-0cec38.netlify.com)
+View live on... [Netlify](https://eloquent-hamilton-0cec38.netlify.com)
 
-[Slides](https://docs.google.com/presentation/d/1rE5OJ5k09h1GtK3-jZ0uBUpizRYse1OuE5fyvZ8tVT0/edit?usp=sharing)
+Presentation on... [GoogleSlides](https://docs.google.com/presentation/d/1rE5OJ5k09h1GtK3-jZ0uBUpizRYse1OuE5fyvZ8tVT0/edit?usp=sharing)
 
