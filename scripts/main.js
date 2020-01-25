@@ -4,17 +4,20 @@ let game;
 document.addEventListener('DOMContentLoaded', (event) => {
   let canvas = document.getElementById('coordinator');
   ctx = canvas.getContext('2d');
-  ctx.fillStyle = "black";
-  ctx.fillRect(250, 360, 20, 20);
+  
+  // ctx.fillStyle = "black";
+  // ctx.fillRect(250, 360, 20, 20);
 
-  function createStartScreen() {
-    game.start();
-    const startBtn = document.getElementById('start');
-    startBtn.style = "display: none";
-  };
+  game = new Game(ctx, new Player());
 
-  const startBtn = document.getElementById('start');
-  startBtn.addEventListener('click', start);
+  // function createStartScreen() {
+  //   game.start();
+  //   const startBtn = document.getElementById('start');
+  //   startBtn.style = "display: none";
+  // };
+
+  // const startBtn = document.getElementById('start');
+  // startBtn.addEventListener('click', start);
 
   // createGameScreen();
 
@@ -34,10 +37,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   // destroyGameOverScreen();
   
-  let game = new Game({
-      ctx: ctx,
-      // this.path,
-      // this.player
-  });
-
 })
