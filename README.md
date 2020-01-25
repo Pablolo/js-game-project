@@ -1,5 +1,6 @@
 # Coordinator 2000
 ![](https://i.imgur.com/XBUDb9F.png)
+
 The purpose of the game is to avoid stepping out of the way. It's a game of coordination eye-hand.
 The game screen will be a a moving road viewed from above.
 The player is represented by a dot (representing in turn a car) that moves only in horizontal each time the player clicks a button on the keyboard.
