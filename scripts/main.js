@@ -4,9 +4,6 @@ let game;
 document.addEventListener('DOMContentLoaded', (event) => {
   let canvas = document.getElementById('coordinator');
   ctx = canvas.getContext('2d');
-  
-  // ctx.fillStyle = "black";
-  // ctx.fillRect(250, 360, 20, 20);
 
   game = new Game(ctx, new Player());
 

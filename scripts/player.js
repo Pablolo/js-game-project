@@ -5,9 +5,7 @@ class Player {
     this.color;
   }
 
-  move() {
-
-  };
+  // move();
 }
 
 

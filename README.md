@@ -104,7 +104,7 @@ moveForward();
 
 [Github](https://github.com/Pablolo/js-game-project)
 
-[GithubPages]
+[Netlify](https://eloquent-hamilton-0cec38.netlify.com)
 
-[Slides] (https://docs.google.com/presentation/d/1rE5OJ5k09h1GtK3-jZ0uBUpizRYse1OuE5fyvZ8tVT0/edit?usp=sharing)
+[Slides](https://docs.google.com/presentation/d/1rE5OJ5k09h1GtK3-jZ0uBUpizRYse1OuE5fyvZ8tVT0/edit?usp=sharing)
 
