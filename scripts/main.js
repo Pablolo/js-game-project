@@ -4,8 +4,10 @@ let game;
 document.addEventListener('DOMContentLoaded', (event) => {
   let canvas = document.getElementById('coordinator');
   ctx = canvas.getContext('2d');
+  ctx.fillStyle = "black";
+  ctx.fillRect(250, 360, 20, 20);
 
-  createStartScreen() {
+  function createStartScreen() {
     game.start();
     const startBtn = document.getElementById('start');
     startBtn.style = "display: none";
@@ -14,28 +16,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const startBtn = document.getElementById('start');
   startBtn.addEventListener('click', start);
 
-  createGameScreen();
+  // createGameScreen();
 
-  createPauseScreen();
+  // createPauseScreen();
 
-  function createGameOverScreen() {
-    let gameOver = document.getElementById("gameover");
-    canvas.style = "display: none";
-    gameOver.style = "display: block";
-  };
+  // function createGameOverScreen() {
+  //   let gameOver = document.getElementById("gameover");
+  //   canvas.style = "display: none";
+  //   gameOver.style = "display: block";
+  // };
 
-  destroyStartScreen();
+  // destroyStartScreen();
 
-  destroyGameScreen();
+  // destroyGameScreen();
 
-  destroyPauseScreen(id);
+  // destroyPauseScreen(id);
 
-  destroyGameOverScreen();
+  // destroyGameOverScreen();
   
   let game = new Game({
       ctx: ctx,
-      this.path,
-      this.player
+      // this.path,
+      // this.player
   });
 
 })
