@@ -6,12 +6,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
   ctx = canvas.getContext('2d');
 
   createStartScreen(id);
+
   createGameScreen(id);
+
   createPauseScreen(id);
+
   createGameOverScreen(id);
+
   destroyStartScreen();
+
   destroyGameScreen();
+
   destroyPauseScreen(id);
+  
   destroyGameOverScreen();
   
   let game = new Game({

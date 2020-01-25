@@ -103,3 +103,8 @@ moveForward();
 [Coordinator 2000 Trello](https://trello.com/b/9QLvlAV0/coordinator-2000-game)
 
 [Github](https://github.com/Pablolo/js-game-project)
+
+[GithubPages]
+
+[Slides] (https://docs.google.com/presentation/d/1rE5OJ5k09h1GtK3-jZ0uBUpizRYse1OuE5fyvZ8tVT0/edit?usp=sharing)
+
