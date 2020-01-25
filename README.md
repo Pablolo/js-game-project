@@ -1,4 +1,5 @@
 # Coordinator 2000
+![](https://i.imgur.com/XBUDb9F.png)
 The purpose of the game is to avoid stepping out of the way. It's a game of coordination eye-hand.
 The game screen will be a a moving road viewed from above.
 The player is represented by a dot (representing in turn a car) that moves only in horizontal each time the player clicks a button on the keyboard.
@@ -28,7 +29,8 @@ Html5 __Canvas__ and Vanilla __Javascript__
   * Then, add turns, right or left.
 * Check collision (when the dot is stepping out of the road).
 * If collision -> Sum time that the dot is out of the way --> Change color of the dot.
-* End game at a certain point (? seconds)
+* Make it faster when time passes.
+* End game at a certain point (? seconds).
 * * *
 ## BACK LOG
 ### Add the second screen
@@ -45,7 +47,6 @@ Html5 __Canvas__ and Vanilla __Javascript__
 ### Player colors
 * Add colors to overall play screen.
 ### Levels
-* Make it faster with increasing levels.
 * Maximum level shows Game Over if you step out of the line just once.
 * * *
 ## Data structure
@@ -77,16 +78,16 @@ game.pause();
 game.gameOver();
 game.init();
 ````
-__Player.js__
+__player.js__
 ````
 function Player(){
   this.width;
   this.height;
   this.color;
 };
-Player.move();
+player.move();
 ````
-__Path.js__
+__path.js__
 ````
 function Path(){
   this.width;
