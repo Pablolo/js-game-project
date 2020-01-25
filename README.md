@@ -1,5 +1,7 @@
 # Coordinator 2000
-![](https://i.imgur.com/XBUDb9F.png)
+<p align="center">
+  <img src="https://i.imgur.com/XBUDb9F.png">
+</p>
 
 The purpose of the game is to avoid stepping out of the way. It's a game of coordination eye-hand.
 The game screen will be a a moving road viewed from above.
@@ -99,4 +101,5 @@ moveForward();
 ````
 ## Links
 [Coordinator 2000 Trello](https://trello.com/b/9QLvlAV0/coordinator-2000-game)
+
 [Github](https://github.com/Pablolo/js-game-project)
