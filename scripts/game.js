@@ -1,10 +1,11 @@
 class Game {
-  constructor(ctx) {
+  constructor(ctx, player) {
     this.ctx = ctx;
+    this.player = player;
   }
 
   _drawPlayer() {
-    this.ctx.fillRect(250, 360, 20, 20);
+    this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height);
     this.ctx.fillStyle = "black";
   };
 
@@ -13,6 +14,7 @@ class Game {
       switch (e.keyCode) {
         case 37: // arrow left
           console.log('left');
+          
           // this.player.goLeft();
           break;
         case 39: // arrow right

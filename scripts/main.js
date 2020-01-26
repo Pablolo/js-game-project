@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let canvas = document.getElementById('coordinator');
   ctx = canvas.getContext('2d');
 
-  game = new Game(ctx);
+  game = new Game(ctx, new Player());
 
   // function createStartScreen() {
   //   game.start();
