@@ -13,8 +13,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   //   startBtn.style = "display: none";
   // };
 
-  // const startBtn = document.getElementById('start');
-  // startBtn.addEventListener('click', start);
+  let startBtn = document.getElementById('play');
+  startBtn.addEventListener('click', function(){
+    game.start();
+  });
 
   // createGameScreen();
 

@@ -25,10 +25,10 @@ class Game {
           // this.player.intervalId ? this.player.stop() : this.player.move();
           break;
       }
+      e.preventDefault();
     });
   };
 
- 
   // generatePath();
 
   // checkCollision();
