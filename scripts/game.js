@@ -21,9 +21,9 @@ class Game {
           break;
         case 39: // arrow right
           console.log('right');
-          this.deltaX += 2;
-          console.log(this.deltaX);
-          // this.player.goRight();
+          // this.deltaX += 2;
+          // console.log(this.deltaX);
+          this.player.goRight();
           break;
         case 80: // p pause
           console.log('pause');
@@ -33,6 +33,7 @@ class Game {
     });
   };
 
+ 
   // generatePath();
 
   // checkCollision();

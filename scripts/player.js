@@ -7,11 +7,16 @@ class Player {
     this.color = "black";
   }
 
-  // goLeft();
+  goLeft() {
+    ctx.clearRect(0, 0, 500, 600);
+  };
 
-  // goRight();
+  goRight() {
+    ctx.clearRect(0, 0, 500, 600);
+  };
 
   // move();
+
 }
 
 
