@@ -2,7 +2,6 @@ class Game {
   constructor(ctx, player) {
     this.ctx = ctx;
     this.player = player;
-    this.deltaX = 0;
   }
 
   _drawPlayer() {
@@ -13,19 +12,15 @@ class Game {
   _assignControlsToKeys() {
     document.addEventListener('keydown', e => {
       switch (e.keyCode) {
-        case 37: // arrow left
+        case 37: 
           console.log('left');
-          this.deltaX -= 2;
-          console.log(this.deltaX);
-          // this.player.goLeft();
+          this.player.goLeft();
           break;
-        case 39: // arrow right
+        case 39: 
           console.log('right');
-          // this.deltaX += 2;
-          // console.log(this.deltaX);
           this.player.goRight();
           break;
-        case 80: // p pause
+        case 80: 
           console.log('pause');
           // this.player.intervalId ? this.player.stop() : this.player.move();
           break;
