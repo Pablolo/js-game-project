@@ -15,14 +15,16 @@ class Game {
       switch (e.keyCode) {
         case 37: 
           console.log('left');
-          this.player.goLeft();
+          this._cleanScreen();
           this._generatePath();
+          this.player.goLeft();
           this.ctx.fillStyle = this.player.color;
           break;
         case 39: 
           console.log('right');
-          this.player.goRight();
+          this._cleanScreen();
           this._generatePath();
+          this.player.goRight();
           this.ctx.fillStyle = this.player.color;
           break;
         case 80: 
@@ -40,6 +42,10 @@ class Game {
     this.ctx.fillRect(this.path.xRight, this.path.yRight, this.path.widthRight, this.path.heightRight);
   };
 
+  _cleanScreen() {
+    this.ctx.clearRect(0, 0, 500, 600);
+  }
+
   // checkCollision();
 
   // pause();
@@ -47,7 +53,7 @@ class Game {
   // gameOver();
 
   start() {
-    this._drawPlayer();
+    this._drawPlayer(); 
     this._generatePath();
     this._assignControlsToKeys();
   };
