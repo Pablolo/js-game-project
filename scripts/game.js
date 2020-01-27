@@ -1,7 +1,8 @@
 class Game {
-  constructor(ctx, player) {
-    this.ctx = ctx;
+  constructor(options, player, path) {
+    this.ctx = options.ctx;
     this.player = player;
+    this.path = path;
   }
 
   _drawPlayer() {
@@ -30,8 +31,9 @@ class Game {
   };
 
   _generatePath() {
-    this.ctx.fillRect(0, 0, 150, 600);
-    this.ctx.fillRect(350, 0, 150, 600);
+    ctx.fillStyle = this.path.color;
+    this.ctx.fillRect(this.path.xLeft, this.path.yLeft, this.path.widthLeft, this.path.heightLeft);
+    this.ctx.fillRect(this.path.xRight, this.path.yRight, this.path.widthRight, this.path.heightRight);
   };
 
   // checkCollision();
