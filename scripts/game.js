@@ -37,9 +37,9 @@ class Game {
   };
 
   _generatePath() {
-    ctx.fillStyle = this.path.color;
     this.ctx.fillRect(this.path.xLeft, this.path.yLeft, this.path.widthLeft, this.path.heightLeft);
     this.ctx.fillRect(this.path.xRight, this.path.yRight, this.path.widthRight, this.path.heightRight);
+    ctx.fillStyle = this.path.color;
   };
 
   _cleanScreen() {
@@ -53,8 +53,8 @@ class Game {
   // gameOver();
 
   start() {
-    this._drawPlayer(); 
     this._generatePath();
+    this._drawPlayer(); 
     this._assignControlsToKeys();
   };
 }

@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     startScreen.style = "display: block";
   };
 
-  // createStartScreen();
-
   playBtn.addEventListener('click', function(){
     game.start();
   });

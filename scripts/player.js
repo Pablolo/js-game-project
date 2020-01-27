@@ -4,12 +4,11 @@ class Player {
     this.y = 360; 
     this.width = 20;
     this.height = 20;
-    this.color = "black";
+    this.color = "green";
     this.deltaX = 0;
   }
 
   goLeft() {
-    // ctx.clearRect(0, 0, 500, 600);
     this.deltaX -= 10;
     console.log(this.deltaX);
     ctx.fillRect(this.x + this.deltaX, this.y, this.width, this.height);
@@ -17,7 +16,6 @@ class Player {
   };
 
   goRight() {
-    // ctx.clearRect(0, 0, 500, 600);
     this.deltaX += 10;
     console.log(this.deltaX);
     ctx.fillRect(this.x + this.deltaX, this.y, this.width, this.height);
