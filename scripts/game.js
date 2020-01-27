@@ -18,14 +18,12 @@ class Game {
           this._cleanScreen();
           this._generatePath();
           this.player.goLeft();
-          this.ctx.fillStyle = this.player.color;
           break;
         case 39: 
           console.log('right');
           this._cleanScreen();
           this._generatePath();
           this.player.goRight();
-          this.ctx.fillStyle = this.player.color;
           break;
         case 80: 
           console.log('pause');
@@ -46,7 +44,11 @@ class Game {
     this.ctx.clearRect(0, 0, 500, 600);
   }
 
-  // checkCollision();
+  _checkCollision() {
+   if (this.player.x >= this.path.xRight) {
+     console.log("HIT!!");
+   }
+  };
 
   // pause();
 

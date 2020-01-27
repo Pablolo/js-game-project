@@ -11,11 +11,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   game = new Game({ctx}, new Player(), new Path());
 
-  function createStartScreen() {
-    canvas.style = "display: none";
-    playBtn.style = "display: none";
-    startScreen.style = "display: block";
-  };
+  // function createStartScreen() {
+  //   canvas.style = "display: none";
+  //   playBtn.style = "display: none";
+  //   startScreen.style = "display: block";
+  // };
 
   playBtn.addEventListener('click', function(){
     game.start();
