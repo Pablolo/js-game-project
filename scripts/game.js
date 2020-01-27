@@ -29,7 +29,10 @@ class Game {
     });
   };
 
-  // generatePath();
+  _generatePath() {
+    this.ctx.fillRect(0, 0, 150, 600);
+    this.ctx.fillRect(350, 0, 150, 600);
+  };
 
   // checkCollision();
 
@@ -39,6 +42,7 @@ class Game {
 
   start() {
     this._drawPlayer();
+    this._generatePath();
     this._assignControlsToKeys();
   };
 }
