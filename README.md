@@ -108,7 +108,9 @@ Kanban board on... [Trello](https://trello.com/b/9QLvlAV0/coordinator-2000-game)
 
 Source code on... [Github](https://github.com/Pablolo/js-game-project)
 
-View live on... [Netlify](https://eloquent-hamilton-0cec38.netlify.com)
+View live on... [Netlify](https://mystifying-mestorf-96fdf3.netlify.com/)
+
+DEV live tests on... [Netlify](https://mystifying-bhaskara-10fe86.netlify.com/)
 
 Presentation on... [GoogleSlides](https://docs.google.com/presentation/d/1rE5OJ5k09h1GtK3-jZ0uBUpizRYse1OuE5fyvZ8tVT0/edit?usp=sharing)
 

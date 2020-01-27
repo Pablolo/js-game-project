@@ -16,10 +16,14 @@ class Game {
         case 37: 
           console.log('left');
           this.player.goLeft();
+          this._generatePath();
+          this.ctx.fillStyle = this.player.color;
           break;
         case 39: 
           console.log('right');
           this.player.goRight();
+          this._generatePath();
+          this.ctx.fillStyle = this.player.color;
           break;
         case 80: 
           console.log('pause');
