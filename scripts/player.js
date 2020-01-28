@@ -5,7 +5,6 @@ class Player {
     this.width = 20;
     this.height = 20;
     this.color = "black";
-    this.deltaX = 0;
   }
 
   goLeft() {

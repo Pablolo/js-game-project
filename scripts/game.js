@@ -8,8 +8,7 @@ class Game {
 
   _drawPlayer() {
     this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height);
-    this.ctx.fillStyle = this.player.color;
-    console.log('drawing player');    
+    this.ctx.fillStyle = this.player.color;  
   };
 
   _assignControlsToKeys() {
@@ -33,9 +32,10 @@ class Game {
   };
 
   _generatePath() {
-    this.ctx.fillRect(this.path.xLeft, this.path.yLeft, this.path.widthLeft, this.path.heightLeft);
-    this.ctx.fillRect(this.path.xRight, this.path.yRight, this.path.widthRight, this.path.heightRight);
+    this.ctx.fillRect(this.path.x, this.path.y, this.path.width, this.path.height);
+    // this.ctx.fillRect(this.path.xRight, this.path.yRight, this.path.widthRight, this.path.heightRight);
     ctx.fillStyle = this.path.color;
+    console.log('drawing path');
   };
 
   _cleanScreen() {
@@ -47,6 +47,7 @@ class Game {
     this._cleanScreen();
     // pintar
     this._drawPlayer(); 
+    this._generatePath();
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
