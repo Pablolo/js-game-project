@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // let gameOver = document.getElementById("gameover");
   ctx = canvas.getContext('2d');
 
-  game = new Game({ctx}, new Player(), new Path());
+  game = new Game({ctx}, new Player());
 
   // function destroyStartScreen() {
   //   container.style = "display: block";

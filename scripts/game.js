@@ -2,9 +2,7 @@ class Game {
   constructor(options, player) {
     this.ctx = options.ctx;
     this.player = player;
-    this.path = path;
     this.interval = undefined;
-    this.generate = true;
     this.leftPath = [];
     this.rightPath = [];
   }
@@ -36,7 +34,8 @@ class Game {
 
   _generatePath() {
     // llenar el array de paths con tantos como necesites.
-    for (let i = 0; i < 100, i++) {
+    console.log('works?');
+    for (let i = 0; i < 100; i++) {
       this.leftPath.push(new Path(0, 0));
     }
     // this.ctx.fillRect(this.path.x, this.path.y, this.path.width, this.path.height);
@@ -45,6 +44,9 @@ class Game {
   };
 
   // recorrer el array y hacer el draw de cada elemento
+  _drawPath() {
+
+  }
 
   _cleanScreen() {
     this.ctx.clearRect(0, 0, 500, 600);

@@ -1,5 +1,5 @@
 class Path {
-  constructor() {
+  constructor(x, y) {
     // this.xLeft = 0;
     // this.yLeft = 0; 
     // this.widthLeft = 150;
