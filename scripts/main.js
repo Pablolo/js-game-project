@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let playBtn = document.getElementById('play');
   let startScreen = document.getElementById('startscreen');
   let startBtn = document.getElementById('start');
-  let container = document.getElementById('container')
+  let container = document.getElementById('container');
+  let body = document.getElementsByClassName('body');
   // let gameOver = document.getElementById("gameover");
   ctx = canvas.getContext('2d');
 
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function destroyStartScreen() {
     container.style = "display: block";
     startScreen.style = "display: none";
+    body[0].style = "background-color: gray";
   };
 
   startBtn.addEventListener('click', function() {

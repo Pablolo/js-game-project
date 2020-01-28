@@ -4,8 +4,20 @@
 }
 
 .body {
-	background-color: gray;
+	background-color: white;
 }
+
+/* Start Screen */
+
+#startscreen {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* .coordinatorLogo {
+	width: 80%;
+} */
 
 /* Canvas */
 
