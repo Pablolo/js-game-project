@@ -1,9 +1,12 @@
 class Game {
-  constructor(options, player, path) {
+  constructor(options, player) {
     this.ctx = options.ctx;
     this.player = player;
     this.path = path;
     this.interval = undefined;
+    this.generate = true;
+    this.leftPath = [];
+    this.rightPath = [];
   }
 
   _drawPlayer() {
@@ -32,12 +35,16 @@ class Game {
   };
 
   _generatePath() {
-    this.ctx.fillRect(this.path.x, this.path.y, this.path.width, this.path.height);
-    // this.ctx.fillRect(this.path.xRight, this.path.yRight, this.path.widthRight, this.path.heightRight);
-    ctx.fillStyle = this.path.color;
-    this.path.paintPath();
-    console.log('drawing path');
+    // llenar el array de paths con tantos como necesites.
+    for (let i = 0; i < 100, i++) {
+      this.leftPath.push(new Path(0, 0));
+    }
+    // this.ctx.fillRect(this.path.x, this.path.y, this.path.width, this.path.height);
+    // ctx.fillStyle = this.path.color;
+    // this.path.paintPath();
   };
+
+  // recorrer el array y hacer el draw de cada elemento
 
   _cleanScreen() {
     this.ctx.clearRect(0, 0, 500, 600);
@@ -48,7 +55,8 @@ class Game {
     this._cleanScreen();
     // pintar
     this._drawPlayer(); 
-    this._generatePath();
+    
+    // movepath para acortar o aumentar
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
@@ -62,6 +70,7 @@ class Game {
 
   start() {
     this._assignControlsToKeys();
+    this._generatePath();
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }

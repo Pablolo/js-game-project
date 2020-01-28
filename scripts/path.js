@@ -16,12 +16,10 @@ class Path {
     this.color = "black";
   }
 
-  paintPath() {
+  paintPath() { //hacemos que el rectangulo
     this.y += 1;
   }
 
-
-  // crear rectangulos
 
 }
 
