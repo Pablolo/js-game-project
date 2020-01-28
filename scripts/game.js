@@ -35,6 +35,7 @@ class Game {
     this.ctx.fillRect(this.path.x, this.path.y, this.path.width, this.path.height);
     // this.ctx.fillRect(this.path.xRight, this.path.yRight, this.path.widthRight, this.path.heightRight);
     ctx.fillStyle = this.path.color;
+    this.path.paintPath();
     console.log('drawing path');
   };
 
@@ -61,7 +62,6 @@ class Game {
 
   start() {
     this._assignControlsToKeys();
-    // this._generatePath();
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }

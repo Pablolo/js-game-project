@@ -16,7 +16,9 @@ class Path {
     this.color = "black";
   }
 
-
+  paintPath() {
+    this.y += 1;
+  }
 
 
   // crear rectangulos
