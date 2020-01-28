@@ -11,6 +11,8 @@ class Path {
     this.heightRight = 600;
   }
 
+  
+
 }
 
 

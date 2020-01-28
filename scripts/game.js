@@ -44,11 +44,11 @@ class Game {
     this.ctx.clearRect(0, 0, 500, 600);
   }
 
-  _checkCollision() {
-   if (this.player.x >= this.path.xRight) {
-     console.log("HIT!!");
-   }
-  };
+  // _checkCollision() {
+  //  if (this.player.x >= this.path.xRight) {
+  //    console.log("HIT!!");
+  //  }
+  // };
 
   // pause();
 
@@ -58,5 +58,6 @@ class Game {
     this._generatePath();
     this._drawPlayer(); 
     this._assignControlsToKeys();
+    // this._checkCollision();
   };
 }
