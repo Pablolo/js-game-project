@@ -17,14 +17,10 @@ class Game {
       switch (e.keyCode) {
         case 37: 
           console.log('left');
-          // this._cleanScreen();
-          // this._generatePath();
           this.player.goLeft();
           break;
         case 39: 
           console.log('right');
-          // this._cleanScreen();
-          // this._generatePath();
           this.player.goRight();
           break;
         case 80: 
@@ -51,17 +47,12 @@ class Game {
     this._cleanScreen();
     // pintar
     this._drawPlayer(); 
-    // this.player.move();
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
   }
 
-  // _checkCollision() {
-  //  if (this.player.x >= this.path.xRight) {
-  //    console.log("HIT!!");
-  //  }
-  // };
+  // _checkCollision() 
 
   // pause();
 

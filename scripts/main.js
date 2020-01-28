@@ -4,10 +4,10 @@ let game;
 document.addEventListener('DOMContentLoaded', (event) => {
   let canvas = document.getElementById('coordinator');
   let playBtn = document.getElementById('play');
-  let startScreen = document.getElementById('startscreen');
+  // let startScreen = document.getElementById('startscreen');
   let startBtn = document.getElementById('start');
-  let container = document.getElementById('container');
-  let body = document.getElementsByClassName('body');
+  // let container = document.getElementById('container');
+  // let body = document.getElementsByClassName('body');
   // let gameOver = document.getElementById("gameover");
   ctx = canvas.getContext('2d');
 

@@ -4,7 +4,7 @@ class Path {
     this.yLeft = 0; 
     this.widthLeft = 150;
     this.heightLeft = 600;
-    this.color = "black";
+    this.color = "green";
     this.xRight = 350;
     this.yRight = 0; 
     this.widthRight = 150;
@@ -14,6 +14,8 @@ class Path {
   // turnRight() {
   //   this.widthLeft -= 10;
   // };
+
+  // crear rectangulos
 
 }
 

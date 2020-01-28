@@ -10,39 +10,16 @@ class Player {
 
   goLeft() {
     this.x -= 10;
-    console.log(this.deltaX);
-    let totalDelta = this.x + this.deltaX;
-    console.log(totalDelta);
-
-    if (totalDelta < 0) {
-      this.deltaX += 10;
-      ctx.fillRect(this.x + this.deltaX, this.y, this.width, this.height);
-      ctx.fillStyle = this.color;
-    } else {
-      ctx.fillRect(totalDelta, this.y, this.width, this.height);
-      ctx.fillStyle = this.color;
+    if (this.x < 0) {
+      this.x += 10;
     }
   };
 
   goRight() {
-    this.deltaX += 10;
-    console.log(this.deltaX);
-    let totalDelta = this.x + this.deltaX;
-    console.log(totalDelta);
-
-    if (totalDelta > 480) {
-      this.deltaX -= 10;
-      ctx.fillRect(this.x + this.deltaX, this.y, this.width, this.height);
-      ctx.fillStyle = this.color;
-    } else {
-      ctx.fillRect(totalDelta, this.y, this.width, this.height);
-      ctx.fillStyle = this.color;
+    this.x += 10;
+    if (this.x > 480) { //hacerlo dinamico para que coja canvas.width (deberas pasarlo al constructor)
+      this.x -= 10;
     }
-  };
- 
-  move() {
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y += 20, this.width, this.height);
   };
 }
 
