@@ -4,15 +4,16 @@ class Player {
     this.y = 360; 
     this.width = 20;
     this.height = 20;
-    this.color = "green";
+    this.color = "black";
     this.deltaX = 0;
   }
 
   goLeft() {
-    this.deltaX -= 10;
+    this.x -= 10;
     console.log(this.deltaX);
     let totalDelta = this.x + this.deltaX;
     console.log(totalDelta);
+
     if (totalDelta < 0) {
       this.deltaX += 10;
       ctx.fillRect(this.x + this.deltaX, this.y, this.width, this.height);
@@ -28,6 +29,7 @@ class Player {
     console.log(this.deltaX);
     let totalDelta = this.x + this.deltaX;
     console.log(totalDelta);
+
     if (totalDelta > 480) {
       this.deltaX -= 10;
       ctx.fillRect(this.x + this.deltaX, this.y, this.width, this.height);
@@ -38,8 +40,10 @@ class Player {
     }
   };
  
-  // move();
-
+  move() {
+    ctx.fillStyle = this.color;
+    ctx.fillRect(this.x, this.y += 20, this.width, this.height);
+  };
 }
 
 

@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   game = new Game({ctx}, new Player(), new Path());
 
-  function destroyStartScreen() {
-    container.style = "display: block";
-    startScreen.style = "display: none";
-    body[0].style = "background-color: gray";
-  };
+  // function destroyStartScreen() {
+  //   container.style = "display: block";
+  //   startScreen.style = "display: none";
+  //   body[0].style = "background-color: gray";
+  // };
 
   startBtn.addEventListener('click', function() {
     destroyStartScreen();

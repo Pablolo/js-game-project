@@ -11,9 +11,9 @@ class Path {
     this.heightRight = 600;
   }
 
-  turnRight() {
-
-  };
+  // turnRight() {
+  //   this.widthLeft -= 10;
+  // };
 
 }
 

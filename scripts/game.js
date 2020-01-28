@@ -3,11 +3,13 @@ class Game {
     this.ctx = options.ctx;
     this.player = player;
     this.path = path;
+    this.interval = undefined;
   }
 
   _drawPlayer() {
     this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height);
     this.ctx.fillStyle = this.player.color;
+    console.log('drawing player');    
   };
 
   _assignControlsToKeys() {
@@ -15,14 +17,14 @@ class Game {
       switch (e.keyCode) {
         case 37: 
           console.log('left');
-          this._cleanScreen();
-          this._generatePath();
+          // this._cleanScreen();
+          // this._generatePath();
           this.player.goLeft();
           break;
         case 39: 
           console.log('right');
-          this._cleanScreen();
-          this._generatePath();
+          // this._cleanScreen();
+          // this._generatePath();
           this.player.goRight();
           break;
         case 80: 
@@ -44,6 +46,17 @@ class Game {
     this.ctx.clearRect(0, 0, 500, 600);
   }
 
+  _update() {
+    // limpiar
+    this._cleanScreen();
+    // pintar
+    this._drawPlayer(); 
+    // this.player.move();
+    if (!!this.interval) {
+      this.interval = window.requestAnimationFrame(this._update.bind(this));
+    }
+  }
+
   // _checkCollision() {
   //  if (this.player.x >= this.path.xRight) {
   //    console.log("HIT!!");
@@ -55,9 +68,8 @@ class Game {
   // gameOver();
 
   start() {
-    this._generatePath();
-    this._drawPlayer(); 
     this._assignControlsToKeys();
-    // this._checkCollision();
+    // this._generatePath();
+    this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }
