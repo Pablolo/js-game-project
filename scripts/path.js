@@ -9,14 +9,14 @@ class Path {
     // this.yRight = 0; 
     // this.widthRight = 150;
     // this.heightRight = 600;
-    this.x = 0;
-    this.y = 0;
+    this.x = x;
+    this.y = y;
     this.width = 150;
     this.height = 5;
     this.color = "black";
   }
 
-  paintPath() { //hacemos que el rectangulo
+  paintPath() { //hacemos que el rectangulo baje por la pantalla
     this.y += 1;
   }
 

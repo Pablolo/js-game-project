@@ -35,20 +35,21 @@ class Game {
   _generatePath() {
     // llenar el array de paths con tantos como necesites.
     console.log('works?');
+    let speed = -5;
+
     for (let i = 0; i < 100; i++) {
-      this.leftPath.push(new Path(0, 0));
+      speed += 5;
+      this.leftPath.push(new Path(0, speed));
     } 
-    // this.ctx.fillRect(this.path.x, this.path.y, this.path.width, this.path.height);
-    // ctx.fillStyle = this.path.color;
+ 
     // this.path.paintPath();
   };
 
   // recorrer el array y hacer el draw de cada elemento
-  
   _drawPath() {
     this.leftPath.forEach(element => {
-      this.ctx.fillStyle = "black";
-      this.ctx.fillRect(0, 0, 100, 100);
+      this.ctx.fillStyle = element.color;
+      this.ctx.fillRect(element.x, element.y, element.width, element.height);
     });
   }
 
@@ -77,7 +78,6 @@ class Game {
   start() {
     this._assignControlsToKeys();
     this._generatePath();
-
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }

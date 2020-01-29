@@ -4,7 +4,7 @@ class Player {
     this.y = 360; 
     this.width = 20;
     this.height = 20;
-    this.color = "black";
+    this.color = "white";
   }
 
   goLeft() {
