@@ -37,15 +37,19 @@ class Game {
     console.log('works?');
     for (let i = 0; i < 100; i++) {
       this.leftPath.push(new Path(0, 0));
-    }
+    } 
     // this.ctx.fillRect(this.path.x, this.path.y, this.path.width, this.path.height);
     // ctx.fillStyle = this.path.color;
     // this.path.paintPath();
   };
 
   // recorrer el array y hacer el draw de cada elemento
+  
   _drawPath() {
-
+    this.leftPath.forEach(element => {
+      this.ctx.fillStyle = "black";
+      this.ctx.fillRect(0, 0, 100, 100);
+    });
   }
 
   _cleanScreen() {
@@ -57,7 +61,7 @@ class Game {
     this._cleanScreen();
     // pintar
     this._drawPlayer(); 
-    
+    this._drawPath();
     // movepath para acortar o aumentar
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
@@ -73,6 +77,7 @@ class Game {
   start() {
     this._assignControlsToKeys();
     this._generatePath();
+
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }
