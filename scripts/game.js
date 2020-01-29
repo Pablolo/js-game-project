@@ -50,7 +50,7 @@ class Game {
   }
 
   _createTurns() {
-
+    this.leftPath.shift();
   }
 
   _cleanScreen() {
@@ -63,7 +63,7 @@ class Game {
     // pintar
     this._drawPath();
     this._drawPlayer(); 
-    // this._createTurns(); para acortar o aumentar los rectangulos y crear curvas
+    this._createTurns(); // para acortar o aumentar los rectangulos y crear curvas
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
