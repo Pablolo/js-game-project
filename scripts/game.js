@@ -8,8 +8,8 @@ class Game {
   }
 
   _drawPlayer() {
-    this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height);
     this.ctx.fillStyle = this.player.color;  
+    this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height);
   };
 
   _assignControlsToKeys() {
@@ -34,15 +34,14 @@ class Game {
 
   _generatePath() {
     // llenar el array de paths con tantos como necesites.
-    console.log('works?');
     let speed = -5;
+    let curva = 150;
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 120; i++) {
       speed += 5;
-      this.leftPath.push(new Path(0, speed));
+      curva += 1;
+      this.leftPath.push(new Path(0, speed, curva));
     } 
- 
-    // this.path.paintPath();
   };
 
   // recorrer el array y hacer el draw de cada elemento
@@ -61,8 +60,8 @@ class Game {
     // limpiar
     this._cleanScreen();
     // pintar
-    this._drawPlayer(); 
     this._drawPath();
+    this._drawPlayer(); 
     // movepath para acortar o aumentar
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
