@@ -5,6 +5,7 @@ class Game {
     this.interval = undefined;
     this.leftPath = [];
     this.rightPath = [];
+    this.frames = 0;
   }
 
   _drawPlayer() {
@@ -33,10 +34,10 @@ class Game {
   };
 
   _generatePath() {   // llenar el array de paths con tantos rectangulos como necesite
-    let speed = -5;
+    let speed = 0; //deberia empezar en 0
     let width = 150;
 
-    for (let i = 0; i < 120; i++) {
+    for (let i = 0; i < 80; i++) {
       speed += 5;
       this.leftPath.push(new Path(0, speed, width));
     } 
@@ -49,21 +50,24 @@ class Game {
     });
   }
 
-  _createTurns() {
-    this.leftPath.shift();
-  }
+  // _createTurns() {
+    
+  //   this.leftPath.pop();
+
+  // }
 
   _cleanScreen() {
     this.ctx.clearRect(0, 0, 500, 600);
   }
 
   _update() {
+    this.frames += 1;
     // limpiar
     this._cleanScreen();
     // pintar
     this._drawPath();
     this._drawPlayer(); 
-    this._createTurns(); // para acortar o aumentar los rectangulos y crear curvas
+    // this._createTurns(); // para acortar o aumentar los rectangulos y crear curvas
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
