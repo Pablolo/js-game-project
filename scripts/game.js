@@ -35,9 +35,9 @@ class Game {
   };
 
   _generatePath() {   // llenar el array de paths con tantos rectangulos como necesite
-    let width = 150;
+    // let width = 150;
     for (let i = 0; i < 1; i++) {
-      this.leftPath.push(new Path(0, 0, width));
+      this.leftPath.push(new Path(0, 0, 150));
     } 
   };
 
@@ -48,7 +48,7 @@ class Game {
     });
   }
   
-  _movePathDown() {
+  _movePathDown() { 
     this.leftPath.forEach(element => {
       element.y += 1;
     })
@@ -56,18 +56,18 @@ class Game {
     if (this.leftPath.length === 800) {
       this.leftPath.shift();
     }
-    this.intervalId = setInterval(this._turnLeft.bind(this), 1500);
 
+    // this._turnLeft();
+    var that = this;
+    setTimeout(function() {
+      that._turnLeft();
+    }, 1000);
   }
 
   _turnLeft() {
-
-
-
-
     if (this.frames % 5 === 0) {
       this.leftPath.forEach(element => {
-        element.width += 1;
+        element.width -= 1;
       })
     }
   }
