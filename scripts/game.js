@@ -55,13 +55,7 @@ class Game {
     this._generatePath();
     if (this.leftPath.length === 800) {
       this.leftPath.shift();
-    }
-
-    // this._turnLeft();
-    var that = this;
-    setTimeout(function() {
-      that._turnLeft();
-    }, 1000);
+    }    
   }
 
   _turnLeft() {
@@ -70,6 +64,26 @@ class Game {
         element.width -= 1;
       })
     }
+  }
+
+  _turnRight() {
+    if (this.frames % 5 === 0) {
+      this.leftPath.forEach(element => {
+        element.width += 1;
+      })
+    }
+  }
+
+  _roadStartToFinish() {
+    let that = this;
+    this._movePathDown();
+    setTimeout(function() {
+      that._turnLeft();
+    }, 1000);
+    setTimeout(function() {
+      that._turnRight();
+    }, 3000);
+
   }
 
   _cleanScreen() {
@@ -83,7 +97,8 @@ class Game {
     // pintar
     this._drawPath();
     this._drawPlayer(); 
-    this._movePathDown();
+    // this._movePathDown();
+    this._roadStartToFinish();  
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
