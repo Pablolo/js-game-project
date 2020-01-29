@@ -50,15 +50,21 @@ class Game {
   _movePathDown() {
     this.leftPath.forEach(element => {
       element.y += 1;
+      if (this.frames % 5 === 0) {
+        element.width -= 1;
+      }
     })
     this._generatePath();
+    if (this.leftPath.length === 800) {
+      this.leftPath.shift();
+    }
   }
 
-  // _createTurns() {
-    
-  //   this.leftPath.pop();
+  // _removeElementsPath();
 
-  // }
+  _createTurns() {
+    
+  }
 
   _cleanScreen() {
     this.ctx.clearRect(0, 0, 500, 600);
