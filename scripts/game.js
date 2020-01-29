@@ -32,24 +32,25 @@ class Game {
     });
   };
 
-  _generatePath() {
-    // llenar el array de paths con tantos como necesites.
+  _generatePath() {   // llenar el array de paths con tantos rectangulos como necesite
     let speed = -5;
-    let curva = 150;
+    let width = 150;
 
     for (let i = 0; i < 120; i++) {
       speed += 5;
-      curva += 1;
-      this.leftPath.push(new Path(0, speed, curva));
+      this.leftPath.push(new Path(0, speed, width));
     } 
   };
 
-  // recorrer el array y hacer el draw de cada elemento
-  _drawPath() {
+  _drawPath() {   // recorrer el array y hacer el draw de cada elemento
     this.leftPath.forEach(element => {
       this.ctx.fillStyle = element.color;
       this.ctx.fillRect(element.x, element.y, element.width, element.height);
     });
+  }
+
+  _createTurns() {
+
   }
 
   _cleanScreen() {
@@ -62,7 +63,7 @@ class Game {
     // pintar
     this._drawPath();
     this._drawPlayer(); 
-    // movepath para acortar o aumentar
+    // this._createTurns(); para acortar o aumentar los rectangulos y crear curvas
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
