@@ -6,6 +6,7 @@ class Game {
     this.leftPath = [];
     this.rightPath = [];
     this.frames = 0;
+    this.intervalId = undefined;
   }
 
   _drawPlayer() {
@@ -46,24 +47,29 @@ class Game {
       this.ctx.fillRect(element.x, element.y, element.width, element.height);
     });
   }
-
+  
   _movePathDown() {
     this.leftPath.forEach(element => {
       element.y += 1;
-      if (this.frames % 5 === 0) {
-        element.width -= 1;
-      }
     })
     this._generatePath();
     if (this.leftPath.length === 800) {
       this.leftPath.shift();
     }
+    this.intervalId = setInterval(this._turnLeft.bind(this), 1500);
+
   }
 
-  // _removeElementsPath();
+  _turnLeft() {
 
-  _createTurns() {
-    
+
+
+
+    if (this.frames % 5 === 0) {
+      this.leftPath.forEach(element => {
+        element.width += 1;
+      })
+    }
   }
 
   _cleanScreen() {
@@ -78,7 +84,6 @@ class Game {
     this._drawPath();
     this._drawPlayer(); 
     this._movePathDown();
-    // this._createTurns(); // para acortar o aumentar los rectangulos y crear curvas
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
@@ -92,7 +97,6 @@ class Game {
 
   start() {
     this._assignControlsToKeys();
-    this._generatePath();
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }
