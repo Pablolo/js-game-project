@@ -3,10 +3,8 @@ class Game {
     this.ctx = options.ctx;
     this.player = player;
     this.interval = undefined;
-    this.leftPath = [];
-    this.rightPath = [];
+    this.pathArray = [];
     this.frames = 0;
-    this.intervalId = undefined;
   }
 
   _drawPlayer() {
@@ -34,45 +32,71 @@ class Game {
     });
   };
 
-
-  _generatePath() {   // llenar el array de paths con tantos rectangulos como necesite
-    for (let i = 0; i < 1; i++) {
-      this.leftPath.push(new Path(170, 0, 160));
-    } 
+  _generatePath() {   // llenar el array de paths 
+    this.pathArray.push(new Path(this.ctx, 170, 0, 160));
   };
 
-  _drawPath() {   // recorrer el array y hacer el draw de cada elemento
-    this.leftPath.forEach(element => {
-      this.ctx.fillStyle = element.color;
-      this.ctx.fillRect(element.x, element.y, element.width, element.height);
-    });
-  }
+  // _drawPath() {   // recorrer el array y hacer el draw de cada elemento
+  //   this.pathArray.forEach(element => {
+      
+  //   });
+  // }
   
   _movePathDown() { 
-    this.leftPath.forEach(element => {
-      element.y += 1;
+    this.pathArray.forEach((element, i) => {
+      element.draw();
+      //element.y += 1;
+      element.move();
+      // console.log(i);
+      // if ()
+      // element.width += 1;
+      // element.x += 1;
     })
-    this._generatePath();
-    if (this.leftPath.length === 800) {
-      this.leftPath.shift();
-    }    
+
+
+    //this._generatePath();
+    //if (this.pathArray.length === 800) {
+    //  this.pathArray.shift();
+    //}    
+  }
+
+  _deleteArrayStuff() {
+    if (this.pathArray.length === 800) {
+       this.pathArray.shift();
+      }  
   }
 
   _turnLeft() {
-    if (this.frames % 5 === 0) {
-      this.leftPath.forEach(element => {
-        element.width -= 1;
-      })
-    }
+    this.pathArray.push(new Path(150, 0, 160));
   }
 
   _turnRight() {
-    if (this.frames % 5 === 0) {
-      this.leftPath.forEach(element => {
-        element.width += 1;
-      })
-    }
+    this.pathArray.push(new Path(190, 0, 160));
   }
+
+  // _turnLeft() {
+  //   if (this.frames % 5 === 0) {
+  //     this.pathArray.forEach(element => {
+  //       element.width -= 1;
+  //     })
+  //   }
+  // }
+
+  // _turnRight() {
+  //   if (this.frames % 5 === 0) {
+  //     this.pathArray.forEach(element => {
+  //       element.width += 1;
+  //     })
+  //   }
+  // }
+
+  // _theRoad() {
+  //   this._movePathDown();
+  //   if (this.frames % 60 === 0) {
+  //     this._turnLeft();
+  //     this._turnRight();
+  //   }
+  // }
 
   // _roadStartToFinish() {
   //   let that = this;
@@ -91,12 +115,16 @@ class Game {
 
   _update() {
     this.frames += 1;
+    console.log(' update')
     // limpiar
     this._cleanScreen();
     // pintar
-    this._drawPath();
-    this._drawPlayer(); 
+    
+    this._generatePath();
     this._movePathDown();
+    this._deleteArrayStuff();
+    this._drawPlayer(); 
+    // this._theRoad();
     // this._roadStartToFinish();  
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
@@ -111,7 +139,7 @@ class Game {
 
   start() {
     this._assignControlsToKeys();
-    this._movePathDown();
+    // this._movePathDown();
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }
