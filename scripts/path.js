@@ -13,7 +13,7 @@ class Path {
     this.y = y;
     this.width = width;
     this.height = 5;
-    this.color = "black";
+    this.color = "gray";
   }
 
 }

@@ -34,10 +34,10 @@ class Game {
     });
   };
 
+
   _generatePath() {   // llenar el array de paths con tantos rectangulos como necesite
-    // let width = 150;
     for (let i = 0; i < 1; i++) {
-      this.leftPath.push(new Path(0, 0, 150));
+      this.leftPath.push(new Path(170, 0, 160));
     } 
   };
 
@@ -74,17 +74,16 @@ class Game {
     }
   }
 
-  _roadStartToFinish() {
-    let that = this;
-    this._movePathDown();
-    setTimeout(function() {
-      that._turnLeft();
-    }, 1000);
-    setTimeout(function() {
-      that._turnRight();
-    }, 3000);
-
-  }
+  // _roadStartToFinish() {
+  //   let that = this;
+  //   this._movePathDown();
+  //   setTimeout(function() {
+  //     that._turnLeft();
+  //   }, 1000);
+  //   setTimeout(function() {
+  //     that._turnRight();
+  //   }, 3000);
+  // }
 
   _cleanScreen() {
     this.ctx.clearRect(0, 0, 500, 600);
@@ -97,8 +96,8 @@ class Game {
     // pintar
     this._drawPath();
     this._drawPlayer(); 
-    // this._movePathDown();
-    this._roadStartToFinish();  
+    this._movePathDown();
+    // this._roadStartToFinish();  
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
@@ -112,6 +111,7 @@ class Game {
 
   start() {
     this._assignControlsToKeys();
+    this._movePathDown();
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }
