@@ -17,6 +17,11 @@ class Path {
     this.y++;
   }
 
+  turnRight() {
+    this.width += 1;
+    //this.x += 1;
+  }
+
 }
 
 

@@ -32,33 +32,26 @@ class Game {
     });
   };
 
-  _generatePath() {   // llenar el array de paths 
-    this.pathArray.push(new Path(this.ctx, 170, 0, 160));
+  _generatePath(x, width) {   // llenar el array de paths 
+    this.pathArray.push(new Path(this.ctx, x, 0, width));
   };
-
+  
   _movePathDown() { 
     this.pathArray.forEach((element, i) => {
       element.draw();
       element.move();
       // console.log(i);
+      
       // if ()
       // element.width += 1;
       // element.x += 1;
-    }) 
+    })
   }
 
-  _deletePath() {
+  _deleteArrayStuff() {
     if (this.pathArray.length === 800) {
        this.pathArray.shift();
-      }  
-  }
-
-  _turnLeft() {
-    this.pathArray.push(new Path(150, 0, 160));
-  }
-
-  _turnRight() {
-    this.pathArray.push(new Path(190, 0, 160));
+    }  
   }
 
   _cleanScreen() {
@@ -67,14 +60,19 @@ class Game {
 
   _update() {
     this.frames += 1;
+    console.log(' update')
     // limpiar
     this._cleanScreen();
     // pintar
-    this._generatePath();
     this._movePathDown();
-    this._deletePath();
+    this._deleteArrayStuff();
     this._drawPlayer(); 
 
+    if (this.frames > 100 && this.frames < 160) {
+      this._generatePath(180, 160)
+    } else {
+      this._generatePath(170, 160)
+    }
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
@@ -88,6 +86,11 @@ class Game {
 
   start() {
     this._assignControlsToKeys();
+
+    for (let i = 0; i < 100; i++) {
+      
+    }
+
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }
