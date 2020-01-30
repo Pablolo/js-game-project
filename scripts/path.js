@@ -14,7 +14,7 @@ class Path {
   }
 
   move() {
-    this.y++
+    this.y++;
   }
 
 }
