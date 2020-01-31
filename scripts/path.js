@@ -1,9 +1,9 @@
 class Path {
-  constructor(ctx, x, y, width) {
+  constructor(ctx, x, y) {
     this.ctx = ctx;
     this.x = x;
     this.y = y;
-    this.width = width;
+    this.width = 160;
     this.height = 5;
     this.color = "gray";
   }
