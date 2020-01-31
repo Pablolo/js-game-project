@@ -47,17 +47,15 @@ class Game {
   let start = 170;
 
   if (this.frames > 100 && this.frames < 260) {  // giro a la derecha 
-    this._generatePath(70 + this.frames); 
-    console.log(this.pathArray[this.pathArray.length - 1]);
+    this._generatePath(this.pathArray[this.pathArray.length - 1].x += 1); // 70 + this.frames
   } else if (this.frames > 255 && this.frames < 470) { // recto 
-
-    this._generatePath(330);
+    this._generatePath(this.pathArray[this.pathArray.length - 1].x);
   } else if (this.frames > 465 && this.frames < 690) { // giro izquierda 
-    this._generatePath(800 - this.frames); 
+    this._generatePath(this.pathArray[this.pathArray.length - 1].x -= 1); 
   } else if (this.frames > 685 && this.frames < 870) { // recto 
-    this._generatePath(110); 
-  } else if (this.frames > 865 && this.frames < 1190) { // giro ... 
-    this._generatePath(0 + this.frames); 
+    this._generatePath(this.pathArray[this.pathArray.length - 1].x); // 110
+  } else if (this.frames > 865 && this.frames < 1190) { // giro derecha 
+    this._generatePath(this.pathArray[this.pathArray.length - 1].x += 1); 
   } else {
     this._generatePath(start); // esta es la linea recta de enmedio
   }
