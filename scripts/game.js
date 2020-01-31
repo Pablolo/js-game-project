@@ -5,6 +5,7 @@ class Game {
     this.interval = undefined;
     this.pathArray = [];
     this.frames = 0;
+    this.paused = false;
   }
 
   _drawPlayer() {
@@ -21,9 +22,9 @@ class Game {
         case 39: 
           this.player.goRight();
           break;
-        case 80: 
-          console.log('pause');
-          // this.player.intervalId ? this.player.stop() : this.player.move();
+        case 32: // space bar 
+          this.pause();
+          this.paused = !this.paused;
           break;
       }
       e.preventDefault();
@@ -31,7 +32,7 @@ class Game {
   };
 
   _startLinePath() {
-    for (let i = 0; i < 600; i++) { // tocar 600 para cambiar 
+    for (let i = 0; i < 600; i++) { 
       this.pathArray.push(new Path(this.ctx, 170, i));
     } 
   }
@@ -50,7 +51,7 @@ class Game {
   _generateTurns() {
   let lastItem = this.pathArray[this.pathArray.length - 1];
 
-  if (this.frames > 0 && this.frames < 160) {  // giro a la derecha 
+  if (this.frames > 0 && this.frames < 160) {  // giro derecha 
     this._generatePath(lastItem.x += 1); // 
   } else if (this.frames > 155 && this.frames < 370) { // recto 
     this._generatePath(lastItem.x);
@@ -103,14 +104,30 @@ class Game {
   }
 
   // _checkCollision() {
+  //   // console.log(this.player.x);
+  //   // console.log(this.player.y);
+  //   // this.pathArray.forEach(element => {
+  //   //   if (element.x === this.player.x) {
+  //   //     console.log('false');
+  //   //   }
+  //   // })
+
   //   this.pathArray.forEach(element => {
-  //     if (element.x === this.player.x) {
-  //       console.log('false');
-  //     }
+  //     if (element.y === 360) { //  && element.x === this.player.x
+
+  //         console.log('ahora');
+      
+  //     }    
   //   })
   // }
 
-  // pause();
+  pause() {
+    if (!this.paused) {
+      window.cancelAnimationFrame(this.interval);
+    } else if (this.paused) {
+      this.interval = window.requestAnimationFrame(this._update.bind(this));
+    }
+  };
 
   // gameOver();
 
