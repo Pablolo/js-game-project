@@ -32,7 +32,7 @@ class Game {
     });
   };
 
-  _generatePath(x, width) {   // llenar el array de paths 
+  _generatePath(x, width) {  
     this.pathArray.push(new Path(this.ctx, x, 0, width));
   };
   
@@ -40,15 +40,20 @@ class Game {
     this.pathArray.forEach((element, i) => {
       element.draw();
       element.move();
-      // console.log(i);
-      
-      // if ()
-      // element.width += 1;
-      // element.x += 1;
     })
   }
 
-  _deleteArrayStuff() {
+  _generateTurns() {
+    let prueba = 170;
+    if (this.frames > 100 && this.frames < 190) {
+      
+      this._generatePath(70 + this.frames, 160);
+    } else {
+      this._generatePath(170, 160); // esta es la linea recta
+    }
+  }
+
+  _deletePath() {
     if (this.pathArray.length === 800) {
        this.pathArray.shift();
     }  
@@ -65,14 +70,10 @@ class Game {
     this._cleanScreen();
     // pintar
     this._movePathDown();
-    this._deleteArrayStuff();
+    this._deletePath();
     this._drawPlayer(); 
-
-    if (this.frames > 100 && this.frames < 160) {
-      this._generatePath(180, 160)
-    } else {
-      this._generatePath(170, 160)
-    }
+    this._generateTurns();
+    
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
