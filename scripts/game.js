@@ -32,6 +32,12 @@ class Game {
     });
   };
 
+  _startLinePath() {
+    for (let i = 0; i < 1800; i++) {
+      this.pathArray.push(new Path(this.ctx, 170, i));
+    } 
+  }
+
   _generatePath(x) {  
     this.pathArray.push(new Path(this.ctx, x, 0)); // cero porque empieza arriba
   };
@@ -94,6 +100,7 @@ class Game {
 
   start() {
     this._assignControlsToKeys();
+    this._startLinePath();
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }
