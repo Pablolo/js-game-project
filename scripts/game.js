@@ -16,11 +16,9 @@ class Game {
     document.addEventListener('keydown', e => {
       switch (e.keyCode) {
         case 37: 
-          console.log('left');
           this.player.goLeft();
           break;
         case 39: 
-          console.log('right');
           this.player.goRight();
           break;
         case 80: 
@@ -33,7 +31,7 @@ class Game {
   };
 
   _startLinePath() {
-    for (let i = 0; i < 1500; i++) {
+    for (let i = 0; i < 600; i++) { // tocar 600 para cambiar 
       this.pathArray.push(new Path(this.ctx, 170, i));
     } 
   }
@@ -53,7 +51,7 @@ class Game {
   let lastItem = this.pathArray[this.pathArray.length - 1];
 
   if (this.frames > 0 && this.frames < 160) {  // giro a la derecha 
-    this._generatePath(lastItem.x += 1); 
+    this._generatePath(lastItem.x += 1); // 
   } else if (this.frames > 155 && this.frames < 370) { // recto 
     this._generatePath(lastItem.x);
   } else if (this.frames > 365 && this.frames < 690) { // giro izquierda 
@@ -80,8 +78,8 @@ class Game {
 }
 
   _deletePath() {
-    if (this.pathArray.length === 800) {
-       this.pathArray.shift();
+    if (this.pathArray.length >= 1200) {
+      this.pathArray.shift();
     }  
   }
 
@@ -98,15 +96,19 @@ class Game {
     this._deletePath();
     this._drawPlayer(); 
     this._generateTurns();
-    
+    // this._checkCollision();
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
   }
 
-  _checkCollision() {
-    
-  }
+  // _checkCollision() {
+  //   this.pathArray.forEach(element => {
+  //     if (element.x === this.player.x) {
+  //       console.log('false');
+  //     }
+  //   })
+  // }
 
   // pause();
 
