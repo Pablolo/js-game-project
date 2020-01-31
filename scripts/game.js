@@ -32,7 +32,7 @@ class Game {
     });
   };
 
-  _generatePath(x, width) {  
+  _generatePath(x) {  
     this.pathArray.push(new Path(this.ctx, x, 0)); // cero porque empieza arriba
   };
   
@@ -44,28 +44,22 @@ class Game {
   }
 
   _generateTurns() {
-    if (this.frames > 100 && this.frames < 260) {  
-      this._generatePath(70 + this.frames); // giro a la derecha
-    } else if (this.frames > 255 && this.frames < 470) { // recto
+    let start = 170;
+
+    if (this.frames > 100 && this.frames < 260) {  // giro a la derecha 
+      this._generatePath(70 + this.frames); 
+    } else if (this.frames > 255 && this.frames < 470) { // recto 
       this._generatePath(330);
-    } else if (this.frames > 465 && this.frames < 690) { // giro izquierda
-      this._generatePath(800 - this.frames);
-    } else if (this.frames > 685 && this.frames < 870) { // recto
-      this._generatePath(110);
+    } else if (this.frames > 465 && this.frames < 690) { // giro izquierda 
+      this._generatePath(800 - this.frames); 
+    } else if (this.frames > 685 && this.frames < 870) { // recto 
+      this._generatePath(110); 
+    } else if (this.frames > 865 && this.frames < 1190) { // giro izquierda 
+      this._generatePath(980 - this.frames); 
     } else {
-      this._generatePath(170); // esta es la linea recta enmedio
+      this._generatePath(start); // esta es la linea recta de enmedio
     }
   }
-
-// Método para generar un elemento según los frames(n) indicados
-// Game.prototype._frameInterval = function (n) {
-//   if ( (this.frameNo / n) % 1 == 0) { 
-//     return true; 
-//   }
-//   return false;
-// };
-
-
 
   _deletePath() {
     if (this.pathArray.length === 800) {
@@ -100,11 +94,6 @@ class Game {
 
   start() {
     this._assignControlsToKeys();
-
-    for (let i = 0; i < 100; i++) {
-      
-    }
-
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }
