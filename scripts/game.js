@@ -33,7 +33,7 @@ class Game {
   };
 
   _startLinePath() {
-    for (let i = 0; i < 1800; i++) {
+    for (let i = 0; i < 1500; i++) {
       this.pathArray.push(new Path(this.ctx, 170, i));
     } 
   }
@@ -52,16 +52,28 @@ class Game {
   _generateTurns() {
   let lastItem = this.pathArray[this.pathArray.length - 1];
 
-  if (this.frames > 100 && this.frames < 260) {  // giro a la derecha 
+  if (this.frames > 0 && this.frames < 160) {  // giro a la derecha 
     this._generatePath(lastItem.x += 1); 
-  } else if (this.frames > 255 && this.frames < 470) { // recto 
+  } else if (this.frames > 155 && this.frames < 370) { // recto 
     this._generatePath(lastItem.x);
-  } else if (this.frames > 465 && this.frames < 690) { // giro izquierda 
+  } else if (this.frames > 365 && this.frames < 690) { // giro izquierda 
     this._generatePath(lastItem.x -= 1); 
   } else if (this.frames > 685 && this.frames < 870) { // recto 
-    this._generatePath(lastItem.x); 
-  } else if (this.frames > 865 && this.frames < 1190) { // giro derecha 
+    this._generatePath(lastItem.x);
+  } else if (this.frames > 865 && this.frames < 1090) { // giro derecha 
     this._generatePath(lastItem.x += 1); 
+  } else if (this.frames > 1085 && this.frames < 1350) { // recto 
+    this._generatePath(lastItem.x); 
+  } else if (this.frames > 1345 && this.frames < 1450) { // giro derecha 
+    this._generatePath(lastItem.x += 1); 
+  } else if (this.frames > 1445 && this.frames < 1590) { // recto 
+    this._generatePath(lastItem.x); 
+  } else if (this.frames > 1585 && this.frames < 1820) { // giro izquierda 
+    this._generatePath(lastItem.x -= 1); 
+  } else if (this.frames > 1815 && this.frames < 2050) { // giro derecha 
+    this._generatePath(lastItem.x += 1); 
+  } else if (this.frames > 2045 && this.frames < 2190) { // recto 
+    this._generatePath(lastItem.x); 
   } else {
     this._generatePath(170); // esta es la linea recta de enmedio
   }
@@ -92,7 +104,9 @@ class Game {
     }
   }
 
-  // _checkCollision() 
+  _checkCollision() {
+    
+  }
 
   // pause();
 
