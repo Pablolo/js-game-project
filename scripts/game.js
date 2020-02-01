@@ -40,11 +40,11 @@ class Game {
   }
 
   _generatePath(x) {  
-    this.pathArray.push(new Path(this.ctx, x, 0)); // cero porque empieza arriba
+    this.pathArray.push(new Path(this.ctx, x, 0)); // zero because starts on top
   };
   
   _movePathDown() { 
-    this.pathArray.forEach((element, i) => {
+    this.pathArray.forEach(element => {
       element.draw();
       element.move();
     })
@@ -80,16 +80,12 @@ class Game {
   }
 }
 
-  // _deletePath() {
-  //   if (this.pathArray.length >= 1200) { //1200
-  //     this.pathArray.shift();
-  //   }  
-  // }
-
   _deletePath() {
-    if (this.pathArray.length >= this.canvasHeight) { 
-      this.pathArray.shift();
-    }  
+    for (let i = 0; i < this.pathArray.length; i++) {
+      if (this.pathArray[0].y >= this.canvasHeight) {
+        this.pathArray.shift();
+      } 
+    }
   }
 
   _cleanScreen() {
@@ -98,9 +94,9 @@ class Game {
 
   _update() {
     this.frames += 1;
-    // limpiar
+    // clean
     this._cleanScreen();
-    // pintar
+    // draw
     this._movePathDown();
     this._deletePath();
     this._drawPlayer(); 
@@ -114,7 +110,7 @@ class Game {
   _checkCollision() {
     this.pathArray.forEach(element => {
       if (element.y > 350 && element.y < 370) {
-        if (this.player.x < element.x || this.player.x + this.player.width > element.x + element.width) { // salida izquierda
+        if (this.player.x < element.x || this.player.x + this.player.width > element.x + element.width) { 
           this.timeOut++;
         } 
       }
