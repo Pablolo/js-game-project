@@ -7,8 +7,9 @@ class Game {
     this.interval = undefined;
     this.pathArray = [];
     this.frames = 0;
-    this.paused = false;
+    this.milliSeconds = 0;
     this.timeOut = 0;
+    this.paused = false;
   }
 
   _drawPlayer() {
@@ -80,9 +81,15 @@ class Game {
     this._generatePath(lastItem.x += 1); 
   } else if (this.frames > 1535 && this.frames < 1685) { // giro izquierda 
     this._generatePath(lastItem.x -= 1); 
-  } else {
-    this._generatePath(170); // esta es la linea recta de enmedio
-  }
+  } else if (this.frames > 1680 && this.frames < 1760) { // recto 
+    this._generatePath(lastItem.x); 
+  } 
+  // else {
+  //   this.frames = 0;
+  // }
+  // } else {
+  //   this._generatePath(170); // esta es la linea recta de enmedio
+  // }
 }
 
   _deletePath() {
@@ -110,6 +117,7 @@ class Game {
 
   _update() {
     this.frames += 1;
+    this.milliSeconds += 1;
     // clean
     this._cleanScreen();
     // draw
@@ -118,6 +126,7 @@ class Game {
     this._drawPlayer(); 
     this._generateTurns();
     this._checkCollision();
+
     // this._checkTimeOut();
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
@@ -125,7 +134,7 @@ class Game {
   }
 
   // _checkTimeOut() { //calculate % of time out of the way
-  //   console.log(this.timeOut / this.frames);
+  //   console.log(this.timeOut / this.milliSeconds);
   // }
 
   pause() {
@@ -141,6 +150,7 @@ class Game {
   start() {
     this._assignControlsToKeys();
     this._startLinePath();
+    console.log(this.alertRed);
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }

@@ -2,11 +2,6 @@ let ctx;
 let game;
 
 document.addEventListener('DOMContentLoaded', (event) => {
-
-  let alertRed = () => {
-    canvas.style = "border: 10px solid red";
-  }
-  
   let canvas = document.getElementById('coordinator');
   let playBtn = document.getElementById('play');
   // let startScreen = document.getElementById('startscreen');
@@ -16,10 +11,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // let gameOver = document.getElementById("gameover");
   ctx = canvas.getContext('2d');
 
+  let alertRed = () => {
+    canvas.style = "border: 10px solid red";
+  }
+
+  // let alertRed = function() {
+  //   return canvas.style = "border: 10px solid red";
+  // }
+
   game = new Game({
     ctx,
     canvasHeight: canvas.height,
-    alertRed,
+    alertRed: alertRed,
   }, new Player({
     canvasWidth: canvas.width,
   }));
