@@ -3,7 +3,7 @@ class Path {
     this.ctx = ctx;
     this.x = x;
     this.y = y;
-    this.width = 160;
+    this.width = 80;
     this.height = 5;
     this.color = "gray";
     this.intervalId = undefined;
@@ -15,9 +15,10 @@ class Path {
   }
 
   move() {
-    this.y++;
+    this.y = this.y + 4;
   }
 }
+
 
 
 

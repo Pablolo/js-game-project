@@ -36,7 +36,7 @@ class Game {
 
   _startLinePath() {
     for (let i = 0; i < 600; i++) { 
-      this.pathArray.push(new Path(this.ctx, 170, i));
+      this.pathArray.push(new Path(this.ctx, 210, i));
     } 
   }
 
@@ -56,27 +56,29 @@ class Game {
 
   if (this.frames > 0 && this.frames < 160) {  // giro derecha 
     this._generatePath(lastItem.x += 1); // 
-  } else if (this.frames > 155 && this.frames < 370) { // recto 
+  } else if (this.frames > 155 && this.frames < 220) { // recto 
     this._generatePath(lastItem.x);
-  } else if (this.frames > 365 && this.frames < 690) { // giro izquierda 
+  } else if (this.frames > 215 && this.frames < 490) { // giro izquierda 
     this._generatePath(lastItem.x -= 1); 
-  } else if (this.frames > 685 && this.frames < 870) { // recto 
+  } else if (this.frames > 485 && this.frames < 510) { // recto 
     this._generatePath(lastItem.x);
-  } else if (this.frames > 865 && this.frames < 1090) { // giro derecha 
+  } else if (this.frames > 505 && this.frames < 700) { // giro derecha 
     this._generatePath(lastItem.x += 1); 
-  } else if (this.frames > 1085 && this.frames < 1350) { // recto 
+  } else if (this.frames > 695 && this.frames < 795) { // recto 
     this._generatePath(lastItem.x); 
-  } else if (this.frames > 1345 && this.frames < 1450) { // giro derecha 
+  } else if (this.frames > 790 && this.frames < 880) { // giro derecha 
     this._generatePath(lastItem.x += 1); 
-  } else if (this.frames > 1445 && this.frames < 1590) { // recto 
+  } else if (this.frames > 875 && this.frames < 1020) { // recto 
     this._generatePath(lastItem.x); 
-  } else if (this.frames > 1585 && this.frames < 1820) { // giro izquierda 
+  } else if (this.frames > 1015 && this.frames < 1290) { // giro izquierda 
     this._generatePath(lastItem.x -= 1); 
-  } else if (this.frames > 1815 && this.frames < 2050) { // giro derecha 
+  } else if (this.frames > 1285 && this.frames < 1350) { // giro derecha 
     this._generatePath(lastItem.x += 1); 
-  } else if (this.frames > 2045 && this.frames < 2190) { // recto 
+  } else if (this.frames > 1345 && this.frames < 1390) { // recto 
     this._generatePath(lastItem.x); 
-  } else if (this.frames > 2185 && this.frames < 2349) { // giro izquierda 
+  } else if (this.frames > 1385 && this.frames < 1540) { // giro derecha 
+    this._generatePath(lastItem.x += 1); 
+  } else if (this.frames > 1535 && this.frames < 1685) { // giro izquierda 
     this._generatePath(lastItem.x -= 1); 
   } else {
     this._generatePath(170); // esta es la linea recta de enmedio
@@ -99,7 +101,7 @@ class Game {
         } 
       }
     })
-    // console.log(this.timeOut);
+    console.log(this.timeOut);
   }
 
   _cleanScreen() {
