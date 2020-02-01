@@ -1,6 +1,7 @@
 class Game {
   constructor(options, player) {
     this.ctx = options.ctx;
+    this.canvasHeight = options.canvasHeight;
     this.player = player;
     this.interval = undefined;
     this.pathArray = [];
@@ -79,8 +80,14 @@ class Game {
   }
 }
 
+  // _deletePath() {
+  //   if (this.pathArray.length >= 1200) { //1200
+  //     this.pathArray.shift();
+  //   }  
+  // }
+
   _deletePath() {
-    if (this.pathArray.length >= 1200) {
+    if (this.pathArray.length >= this.canvasHeight) { 
       this.pathArray.shift();
     }  
   }
@@ -105,8 +112,6 @@ class Game {
   }
 
   _checkCollision() {
-    // console.log(this.player.y);
-   
     this.pathArray.forEach(element => {
       if (element.y > 350 && element.y < 370) {
         if (this.player.x < element.x || this.player.x + this.player.width > element.x + element.width) { // salida izquierda
@@ -114,7 +119,7 @@ class Game {
         } 
       }
     })
-    console.log(this.timeOut);
+    // console.log(this.timeOut);
   }
 
   pause() {

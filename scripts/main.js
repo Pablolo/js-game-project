@@ -11,7 +11,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // let gameOver = document.getElementById("gameover");
   ctx = canvas.getContext('2d');
 
-  game = new Game({ctx}, new Player());
+  game = new Game({
+    ctx,
+    canvasHeight: canvas.height,
+  }, new Player());
 
   // function destroyStartScreen() {
   //   container.style = "display: block";
