@@ -6,6 +6,7 @@ class Game {
     this.pathArray = [];
     this.frames = 0;
     this.paused = false;
+    this.timeOut = 0;
   }
 
   _drawPlayer() {
@@ -97,29 +98,24 @@ class Game {
     this._deletePath();
     this._drawPlayer(); 
     this._generateTurns();
-    // this._checkCollision();
+    this._checkCollision();
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
   }
 
-  // _checkCollision() {
-  //   // console.log(this.player.x);
-  //   // console.log(this.player.y);
-  //   // this.pathArray.forEach(element => {
-  //   //   if (element.x === this.player.x) {
-  //   //     console.log('false');
-  //   //   }
-  //   // })
-
-  //   this.pathArray.forEach(element => {
-  //     if (element.y === 360) { //  && element.x === this.player.x
-
-  //         console.log('ahora');
-      
-  //     }    
-  //   })
-  // }
+  _checkCollision() {
+    // console.log(this.player.y);
+   
+    this.pathArray.forEach(element => {
+      if (element.y > 350 && element.y < 370) {
+        if (this.player.x < element.x || this.player.x + this.player.width > element.x + element.width) { // salida izquierda
+          this.timeOut++;
+        } 
+      }
+    })
+    console.log(this.timeOut);
+  }
 
   pause() {
     if (!this.paused) {
