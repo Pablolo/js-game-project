@@ -14,7 +14,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   game = new Game({
     ctx,
     canvasHeight: canvas.height,
-  }, new Player());
+  }, new Player({
+    canvasWidth: canvas.width,
+  }));
 
   // function destroyStartScreen() {
   //   container.style = "display: block";

@@ -1,10 +1,11 @@
 class Player {
-  constructor() {
+  constructor(options) {
     this.x = 240;
     this.y = 360; 
     this.width = 20;
     this.height = 20;
     this.color = "yellow";
+    this.canvasWidth = options.canvasWidth;
   }
 
   goLeft() {
@@ -15,8 +16,9 @@ class Player {
   };
 
   goRight() {
+    console.log(this.canvasWidth);
     this.x += 10;
-    if (this.x > 480) { //hacerlo dinamico para que coja canvas.width (deberas pasarlo al constructor)
+    if (this.x > (this.canvasWidth - this.width)) { 
       this.x -= 10;
     }
   };

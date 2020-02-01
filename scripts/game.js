@@ -115,7 +115,7 @@ class Game {
         } 
       }
     })
-    // console.log(this.timeOut);
+    console.log(this.timeOut);
   }
 
   pause() {
