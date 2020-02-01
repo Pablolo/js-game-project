@@ -1,6 +1,7 @@
 class Game {
   constructor(options, player) {
     this.ctx = options.ctx;
+    this.alertRed = options.alertRed;
     this.canvasHeight = options.canvasHeight;
     this.player = player;
     this.interval = undefined;
@@ -75,6 +76,8 @@ class Game {
     this._generatePath(lastItem.x += 1); 
   } else if (this.frames > 2045 && this.frames < 2190) { // recto 
     this._generatePath(lastItem.x); 
+  } else if (this.frames > 2185 && this.frames < 2349) { // giro izquierda 
+    this._generatePath(lastItem.x -= 1); 
   } else {
     this._generatePath(170); // esta es la linea recta de enmedio
   }
@@ -86,6 +89,17 @@ class Game {
         this.pathArray.shift();
       } 
     }
+  }
+
+  _checkCollision() {
+    this.pathArray.forEach(element => {
+      if (element.y > 350 && element.y < 370) {
+        if (this.player.x < element.x || this.player.x + this.player.width > element.x + element.width) { 
+          this.timeOut++;
+        } 
+      }
+    })
+    // console.log(this.timeOut);
   }
 
   _cleanScreen() {
@@ -102,21 +116,15 @@ class Game {
     this._drawPlayer(); 
     this._generateTurns();
     this._checkCollision();
+    // this._checkTimeOut();
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
   }
 
-  _checkCollision() {
-    this.pathArray.forEach(element => {
-      if (element.y > 350 && element.y < 370) {
-        if (this.player.x < element.x || this.player.x + this.player.width > element.x + element.width) { 
-          this.timeOut++;
-        } 
-      }
-    })
-    console.log(this.timeOut);
-  }
+  // _checkTimeOut() { //calculate % of time out of the way
+  //   console.log(this.timeOut / this.frames);
+  // }
 
   pause() {
     if (!this.paused) {

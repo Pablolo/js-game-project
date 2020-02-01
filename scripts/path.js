@@ -14,7 +14,8 @@ class Path {
   }
 
   move() {
-    this.y++; //cambiar para aumentar velocidad, hacer un if dependiendo de la velocity que se le pase a move()
+    // this.y++; //cambiar para aumentar velocidad, hacer un if dependiendo de la velocity que se le pase a move()
+    this.y = this.y + 4;
   }
 
 }

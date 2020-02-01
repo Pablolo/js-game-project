@@ -16,7 +16,6 @@ class Player {
   };
 
   goRight() {
-    console.log(this.canvasWidth);
     this.x += 10;
     if (this.x > (this.canvasWidth - this.width)) { 
       this.x -= 10;

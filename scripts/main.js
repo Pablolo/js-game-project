@@ -2,6 +2,11 @@ let ctx;
 let game;
 
 document.addEventListener('DOMContentLoaded', (event) => {
+
+  let alertRed = () => {
+    canvas.style = "border: 10px solid red";
+  }
+  
   let canvas = document.getElementById('coordinator');
   let playBtn = document.getElementById('play');
   // let startScreen = document.getElementById('startscreen');
@@ -14,6 +19,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   game = new Game({
     ctx,
     canvasHeight: canvas.height,
+    alertRed,
   }, new Player({
     canvasWidth: canvas.width,
   }));
@@ -31,6 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   playBtn.addEventListener('click', function(){
     game.start();
   });
+
 
   // createGameScreen();
 
