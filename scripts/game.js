@@ -46,8 +46,8 @@ class Game {
   
   _movePathDown() { 
     this.pathArray.forEach(element => {
-      element.draw();
       element.move();
+      element.draw();
     })
   }
 

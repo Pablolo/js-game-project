@@ -6,6 +6,7 @@ class Path {
     this.width = 160;
     this.height = 5;
     this.color = "gray";
+    this.intervalId = undefined;
   }
 
   draw() {
@@ -14,10 +15,8 @@ class Path {
   }
 
   move() {
-    // this.y++; //cambiar para aumentar velocidad, hacer un if dependiendo de la velocity que se le pase a move()
-    this.y = this.y + 4;
+    this.y++;
   }
-
 }
 
 
