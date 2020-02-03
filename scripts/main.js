@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let startScreen = document.getElementById('startscreen');
   let startBtn = document.getElementById('start');
   let container = document.getElementById('container');
-  // let body = document.getElementsByClassName('body');
   let gameOver = document.getElementById("gameover");
+  // let body = document.getElementsByClassName('body');
   ctx = canvas.getContext('2d');
 
   let alertRed = () => {
@@ -33,16 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     game.start();
   });
 
-  // createGameScreen();
-
   // createPauseScreen();
-
-  
-  // destroyGameScreen();
-
-  // destroyPauseScreen(id);
-
-  // destroyGameOverScreen();
 
   game = new Game({
     ctx,

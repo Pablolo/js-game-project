@@ -42,7 +42,7 @@ class Game {
   }
 
   _generatePath(x) {  
-    this.pathArray.push(new Path(this.ctx, x, 0)); // zero because starts on top
+    this.pathArray.push(new Path(this.ctx, x, 0)); 
   };
   
   _movePathDown() { 
@@ -142,10 +142,6 @@ class Game {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
   };
-
-  // printgameOver() {
-  //   console.log('game over');
-  // };
 
   start() {
     this._assignControlsToKeys();
