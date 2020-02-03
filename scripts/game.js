@@ -6,8 +6,9 @@ class Game {
     this.interval = undefined;
     this.pathArray = [];
     this.frames = 0;
-    this.milliSeconds = 0;
+    this.finalFrames = 0;
     this.timeOut = 0;
+    this.finalTimeOut = 0;
     this.paused = false;
     this.gameOver = callback1;
     this.alert = callback2;
@@ -89,6 +90,10 @@ class Game {
     // console.log('lastpath');
   } else {
     this.gameOver();
+    this.finalTimeOut = this.timeOut;
+    console.log(this.finalTimeOut);
+    // this.finalFrames = this.frames;
+    // console.log(this.finalFrames);
   }
 }
 
@@ -111,7 +116,7 @@ class Game {
         }
       }
     })
-    console.log(this.timeOut);
+    // console.log(this.timeOut);
   }
 
   _cleanScreen() {
@@ -120,7 +125,6 @@ class Game {
 
   _update() {
     this.frames += 1;
-    this.milliSeconds += 1;
     // clean
     this._cleanScreen();
     // draw
@@ -129,15 +133,14 @@ class Game {
     this._drawPlayer(); 
     this._generateTurns();
     this._checkCollision();
-    // this.options.alertRed();
     // this._checkTimeOut();
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
   }
 
-  // _checkTimeOut() { //calculate % of time out of the way
-  //   console.log(this.timeOut / this.milliSeconds);
+  // _checkTimeOut() { //calculate % of time out of the way / 1849 frames
+  //   this.finalTimeOut;
   // }
 
   pause() {
