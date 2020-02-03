@@ -11,8 +11,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // let body = document.getElementsByClassName('body');
   ctx = canvas.getContext('2d');
 
-  let alertRed = () => {
-    canvas.style = "border: 10px solid red";
+  // let alertRed = () => {
+  //   canvas.style = "border: 10px solid red";
+  // }
+
+  function alertRed() {
+    canvas.style = "border: 10px solid #c0392b";
   }
 
   function destroyStartScreen() {
@@ -38,9 +42,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   game = new Game({
     ctx,
     canvasHeight: canvas.height,
-    alertRed,
   }, new Player({
     canvasWidth: canvas.width,
-  }), createGameOverScreen);
+  }), createGameOverScreen, alertRed);
 
 })
