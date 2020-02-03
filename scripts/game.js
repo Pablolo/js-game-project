@@ -31,7 +31,6 @@ class Game {
           break;
         case 32: // space bar 
           this.pause();
-          this.paused = !this.paused;
           break;
       }
       e.preventDefault();
@@ -144,9 +143,10 @@ class Game {
   // }
 
   pause() {
-    if (!this.paused) {
+    this.paused = !this.paused;  
+    if (this.paused) {
       window.cancelAnimationFrame(this.interval);
-    } else if (this.paused) {
+    } else {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
   };
