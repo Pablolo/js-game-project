@@ -1,7 +1,6 @@
 class Game {
   constructor(options, player) {
     this.ctx = options.ctx;
-    this.alertRed = options.alertRed;
     this.canvasHeight = options.canvasHeight;
     this.player = player;
     this.interval = undefined;
@@ -83,7 +82,11 @@ class Game {
     this._generatePath(lastItem.x -= 1); 
   } else if (this.frames > 1680 && this.frames < 1760) { // recto 
     this._generatePath(lastItem.x); 
-  } 
+  } else if (this.frames > 1755 && this.frames < 1850) { // recto 
+    console.log('lastpath');
+  } else {
+    this.gameOver();
+  }
   // else {
   //   this.frames = 0;
   // }
@@ -126,7 +129,7 @@ class Game {
     this._drawPlayer(); 
     this._generateTurns();
     this._checkCollision();
-
+    // this.options.alertRed();
     // this._checkTimeOut();
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
@@ -145,7 +148,9 @@ class Game {
     }
   };
 
-  // gameOver();
+  gameOver() {
+    console.log('game over');
+  };
 
   start() {
     this._assignControlsToKeys();
