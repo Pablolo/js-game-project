@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   };
 
   function createGameOverScreen() {
-    canvas.style = "display: none";
+    container.style = "display: none";
     gameOver.style = "display: block";
   };
 
@@ -50,6 +50,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     alertRed,
   }, new Player({
     canvasWidth: canvas.width,
-  }));
+  }), createGameOverScreen);
 
 })

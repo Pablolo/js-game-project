@@ -1,5 +1,5 @@
 class Game {
-  constructor(options, player) {
+  constructor(options, player, callback) {
     this.ctx = options.ctx;
     this.canvasHeight = options.canvasHeight;
     this.player = player;
@@ -9,6 +9,7 @@ class Game {
     this.milliSeconds = 0;
     this.timeOut = 0;
     this.paused = false;
+    this.gameOver = callback;
   }
 
   _drawPlayer() {
@@ -83,16 +84,10 @@ class Game {
   } else if (this.frames > 1680 && this.frames < 1760) { // recto 
     this._generatePath(lastItem.x); 
   } else if (this.frames > 1755 && this.frames < 1850) { // recto 
-    console.log('lastpath');
+    // console.log('lastpath');
   } else {
     this.gameOver();
   }
-  // else {
-  //   this.frames = 0;
-  // }
-  // } else {
-  //   this._generatePath(170); // esta es la linea recta de enmedio
-  // }
 }
 
   _deletePath() {
@@ -148,9 +143,9 @@ class Game {
     }
   };
 
-  gameOver() {
-    console.log('game over');
-  };
+  // printgameOver() {
+  //   console.log('game over');
+  // };
 
   start() {
     this._assignControlsToKeys();
