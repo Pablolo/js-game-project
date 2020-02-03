@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   // let body = document.getElementsByClassName('body');
   ctx = canvas.getContext('2d');
 
-  // let alertRed = () => {
-  //   canvas.style = "border: 10px solid red";
-  // }
+  function alertWhite() {
+    canvas.style = "border: 10px solid white";
+  }
 
   function alertRed() {
     canvas.style = "border: 10px solid #c0392b";
@@ -44,6 +44,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     canvasHeight: canvas.height,
   }, new Player({
     canvasWidth: canvas.width,
-  }), createGameOverScreen, alertRed);
+  }), createGameOverScreen, alertRed, alertWhite);
 
 })

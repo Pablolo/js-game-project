@@ -1,5 +1,5 @@
 class Game {
-  constructor(options, player, callback1, callback2) {
+  constructor(options, player, callback1, callback2, callback3) {
     this.ctx = options.ctx;
     this.canvasHeight = options.canvasHeight;
     this.player = player;
@@ -11,6 +11,7 @@ class Game {
     this.paused = false;
     this.gameOver = callback1;
     this.alert = callback2;
+    this.alertWhite = callback3;
   }
 
   _drawPlayer() {
@@ -105,7 +106,9 @@ class Game {
         if (this.player.x < element.x || this.player.x + this.player.width > element.x + element.width) { 
           this.timeOut++;
           this.alert();
-        } 
+        } else {
+          this.alertWhite();
+        }
       }
     })
     console.log(this.timeOut);
