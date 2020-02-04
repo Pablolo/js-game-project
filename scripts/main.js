@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let gameOver = document.getElementById("gameover");
   let playAgain = document.getElementById('tryagain');
   let body = document.getElementById('body');
+  let rightPerc = document.getElementById('right-final-number');
   ctx = canvas.getContext('2d');
 
   function alertWhite() {
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function createGameOverScreen() {
     container.style = "display: none";
     gameOver.style = "display: block";
+    body.style = "background-color: white;"
   };
 
   playAgain.addEventListener('click', function() {
@@ -48,6 +50,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   game = new Game({
     ctx,
     canvasHeight: canvas.height,
+    rightPerc,
   }, new Player({
     canvasWidth: canvas.width,
   }), createGameOverScreen, alertRed, alertWhite);

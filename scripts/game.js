@@ -1,17 +1,18 @@
 class Game {
   constructor(options, player, callback1, callback2, callback3) {
     this.ctx = options.ctx;
+    this.rightPerc = options.rightPerc;
     this.canvasHeight = options.canvasHeight;
     this.player = player;
     this.interval = undefined;
     this.pathArray = [];
     this.frames = 0;
     this.timeOut = 0;
-    this.finalTimeOut = 0;
     this.paused = false;
     this.gameOver = callback1;
     this.alert = callback2;
     this.alertWhite = callback3;
+    this.finalPercentage = 0;
   }
 
   _drawPlayer() {
@@ -92,11 +93,6 @@ class Game {
   _resultScreen() {
     window.cancelAnimationFrame(this.interval);
     this.gameOver();
-    console.log(this.frames)
-
-    this.finalTimeOut = this.timeOut;
-    // console.log(this.finalTimeOut);
-    // console.log(this.interval);
     this._checkTimeOut(this.timeOut);
   }
 
@@ -135,16 +131,19 @@ class Game {
     this._drawPlayer(); 
     this._generateTurns();
     this._checkCollision();
-
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
   }
 
-  _checkTimeOut(timeOut) { //calculate % of time out of the way / 1850 frames / 8800 timeoutmax
-    console.log("result:", this.finalTimeOut, "and maxtimeout:", 9800);
-    let porcentajeFinal = ((timeOut / 9800) * 100).toFixed(1);
-    console.log("% final:",porcentajeFinal);
+  _checkTimeOut(timeOut) { // calculate % of time out of the way (9800 max. timeout)
+    this.finalPercentage = ((timeOut / 9800) * 100).toFixed(1);
+    console.log("% final:", this.finalPercentage);
+    this._printPercentage();
+  }
+
+  _printPercentage() {
+    this.rightPerc.innerHTML = this.finalPercentage;
   }
 
   pause() {
