@@ -6,7 +6,6 @@ class Game {
     this.interval = undefined;
     this.pathArray = [];
     this.frames = 0;
-    this.finalFrames = 0;
     this.timeOut = 0;
     this.finalTimeOut = 0;
     this.paused = false;
@@ -88,13 +87,18 @@ class Game {
   } else if (this.frames > 1755 && this.frames < 1850) { // recto 
     // console.log('lastpath');
   } else {
-    this.gameOver();
-    this.finalTimeOut = this.timeOut;
-    console.log(this.finalTimeOut);
-    // this.finalFrames = this.frames;
-    // console.log(this.finalFrames);
+    this._resultScreen();
   }
 }
+
+  _resultScreen() {
+    this.gameOver();
+    window.cancelAnimationFrame(this.interval);
+
+    // this.finalTimeOut = this.timeOut;
+    // console.log(this.finalTimeOut);
+    // console.log(this.frames);
+  }
 
   _deletePath() {
     for (let i = 0; i < this.pathArray.length; i++) {
@@ -124,6 +128,7 @@ class Game {
 
   _update() {
     this.frames += 1;
+    console.log(this.frames);
     // clean
     this._cleanScreen();
     // draw
@@ -154,7 +159,6 @@ class Game {
   start() {
     this._assignControlsToKeys();
     this._startLinePath();
-    console.log(this.alertRed);
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
 }
