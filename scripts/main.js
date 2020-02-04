@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let container = document.getElementById('container');
   let gameOver = document.getElementById("gameover");
   let playAgain = document.getElementById('tryagain');
-  // let body = document.getElementsByClassName('body');
+  let body = document.getElementById('body');
   ctx = canvas.getContext('2d');
 
   function alertWhite() {
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function destroyStartScreen() {
     startScreen.style = "display: none";
     container.style = "display: block";
+    body.style = "background-color: black;"
   };
 
   function createGameOverScreen() {

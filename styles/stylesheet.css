@@ -4,7 +4,7 @@
 }
 
 .body {
-	background-color: black;
+	background-color: white;
 }
 
 /* Start Screen */
@@ -14,6 +14,8 @@
 	flex-direction: column;
 	align-items: center;
 }
+
+
 
 /* .coordinatorLogo {
 	width: 80%;
@@ -73,6 +75,3 @@
 
 /* Game Over Screen */
 
-.gameoverTitle {
-	color: white;
-}
