@@ -1,6 +1,6 @@
 # Coordinator 2000
 <p align="center">
-  <img src="https://i.imgur.com/EyGkqDa.png">
+  <img src="/images/OKcoordinator_logo.png">
 </p>
 
 The purpose of the game is to avoid stepping out of the way. It's a game of coordination eye-hand.

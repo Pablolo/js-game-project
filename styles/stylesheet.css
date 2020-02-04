@@ -3,8 +3,9 @@
   width: 500px;
 }
 
-.body {
+#body {
 	background-color: white;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 /* Start Screen */
@@ -12,14 +13,12 @@
 #startscreen {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	text-align: center;
 }
 
-
-
-/* .coordinatorLogo {
-	width: 80%;
-} */
+.main-description {
+	font-size: 2rem;
+}
 
 /* Canvas */
 
@@ -75,3 +74,12 @@
 
 /* Game Over Screen */
 
+#gameover {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+
+.gameover-title {
+	color: white;
+}
