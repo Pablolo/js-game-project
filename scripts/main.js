@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let startBtn = document.getElementById('start');
   let container = document.getElementById('container');
   let gameOver = document.getElementById("gameover");
+  let playAgain = document.getElementById('tryagain');
   // let body = document.getElementsByClassName('body');
   ctx = canvas.getContext('2d');
 
@@ -28,6 +29,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     container.style = "display: none";
     gameOver.style = "display: block";
   };
+
+  playAgain.addEventListener('click', function() {
+    window.location.reload();
+  })
 
   startBtn.addEventListener('click', function() {
     destroyStartScreen();
