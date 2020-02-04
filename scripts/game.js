@@ -2,6 +2,7 @@ class Game {
   constructor(options, player, callback1, callback2, callback3) {
     this.ctx = options.ctx;
     this.rightPerc = options.rightPerc;
+    this.passedFailed = options.passedFailed;
     this.canvasHeight = options.canvasHeight;
     this.player = player;
     this.interval = undefined;
@@ -140,10 +141,19 @@ class Game {
     this.finalPercentage = ((timeOut / 9800) * 100).toFixed(1);
     console.log("% final:", this.finalPercentage);
     this._printPercentage();
+    this._passedOrFailed();
   }
 
   _printPercentage() {
-    this.rightPerc.innerHTML = this.finalPercentage;
+    this.rightPerc.innerHTML = `${this.finalPercentage} %`;
+  }
+
+  _passedOrFailed() {
+    if (this.finalPercentage < 10) {
+      this.passedFailed.innerHTML = "Congratulations! Coordination test approved.";
+    } else {
+      this.passedFailed.innerHTML = "You need better reflexes! Coordination test failed :(";
+    }
   }
 
   pause() {

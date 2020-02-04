@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let playAgain = document.getElementById('tryagain');
   let body = document.getElementById('body');
   let rightPerc = document.getElementById('right-final-number');
+  let passedFailed = document.getElementById('passed-failed');
   ctx = canvas.getContext('2d');
 
   function alertWhite() {
@@ -51,6 +52,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     ctx,
     canvasHeight: canvas.height,
     rightPerc,
+    passedFailed,
   }, new Player({
     canvasWidth: canvas.width,
   }), createGameOverScreen, alertRed, alertWhite);
