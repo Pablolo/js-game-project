@@ -56,8 +56,8 @@ class Game {
   _generateTurns() {
   let lastItem = this.pathArray[this.pathArray.length - 1];
 
-  if (this.frames > 0 && this.frames < 160) {  // giro derecha 
-    this._generatePath(lastItem.x += 1); // 
+  if (this.frames >= 0 && this.frames < 160) {  // giro derecha 
+    this._generatePath(lastItem.x += 1); 
   } else if (this.frames > 155 && this.frames < 220) { // recto 
     this._generatePath(lastItem.x);
   } else if (this.frames > 215 && this.frames < 490) { // giro izquierda 
@@ -82,22 +82,22 @@ class Game {
     this._generatePath(lastItem.x += 1); 
   } else if (this.frames > 1535 && this.frames < 1685) { // giro izquierda 
     this._generatePath(lastItem.x -= 1); 
-  } else if (this.frames > 1680 && this.frames < 1760) { // recto 
+  } else if (this.frames > 1680 && this.frames < 1850) { // recto 
     this._generatePath(lastItem.x); 
-  } else if (this.frames > 1755 && this.frames < 1850) { // recto 
-    // console.log('lastpath');
-  } else {
+  } else if (this.frames == 1851) {
     this._resultScreen();
   }
 }
 
   _resultScreen() {
-    this.gameOver();
     window.cancelAnimationFrame(this.interval);
+    this.gameOver();
+    console.log(this.frames)
 
-    // this.finalTimeOut = this.timeOut;
+    this.finalTimeOut = this.timeOut;
     // console.log(this.finalTimeOut);
-    // console.log(this.frames);
+    // console.log(this.interval);
+    this._checkTimeOut(this.timeOut);
   }
 
   _deletePath() {
@@ -119,7 +119,6 @@ class Game {
         }
       }
     })
-    // console.log(this.timeOut);
   }
 
   _cleanScreen() {
@@ -127,8 +126,7 @@ class Game {
   }
 
   _update() {
-    this.frames += 1;
-    console.log(this.frames);
+    this.frames += 1; 
     // clean
     this._cleanScreen();
     // draw
@@ -137,15 +135,17 @@ class Game {
     this._drawPlayer(); 
     this._generateTurns();
     this._checkCollision();
-    // this._checkTimeOut();
+
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
   }
 
-  // _checkTimeOut() { //calculate % of time out of the way / 1849 frames
-  //   this.finalTimeOut;
-  // }
+  _checkTimeOut(timeOut) { //calculate % of time out of the way / 1850 frames / 8800 timeoutmax
+    console.log("result:", this.finalTimeOut, "and maxtimeout:", 9800);
+    let porcentajeFinal = ((timeOut / 9800) * 100).toFixed(1);
+    console.log("% final:",porcentajeFinal);
+  }
 
   pause() {
     this.paused = !this.paused;  
