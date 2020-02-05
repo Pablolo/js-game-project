@@ -3,7 +3,6 @@ let game;
 
 document.addEventListener('DOMContentLoaded', (event) => {
   let canvas = document.getElementById('coordinator');
-  let leftCanvas = document.getElementById('coordinator-left');
   let playBtn = document.getElementById('play');
   let startScreen = document.getElementById('startscreen');
   let startBtn = document.getElementById('start');
@@ -19,12 +18,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   function alertWhite() {
     canvas.style = "border: 10px solid white";
-    leftCanvas.style = "border: 10px solid white";
   }
 
   function alertRed() {
     canvas.style = "border: 10px solid #fc5c65"; 
-    leftCanvas.style = "border: 10px solid #fc5c65"; 
   }
 
   function destroyStartScreen() {
@@ -57,8 +54,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     hideInstructions();
     game.start();
   });
-
-  // createPauseScreen();
 
   game = new Game({
     ctx,

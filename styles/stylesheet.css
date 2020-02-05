@@ -111,7 +111,7 @@
 }
 
 
-/* Play when Ready Button*/
+/* Play when Ready Button */
 
 #play {
 	font-family: 'Courier New', Courier, monospace;
@@ -141,6 +141,10 @@
 }
 
 /* Instructions */
+
+#instructions-together {
+	background-color: gray;
+}
 
 .title-instructions {
 	font-size: 1.3rem;
@@ -215,7 +219,7 @@
     transform: skew(-15deg, 0deg);
 }
 
-/* Try Again Button*/
+/* Try Again Button */
 
 #tryagain {
 	color: white;
