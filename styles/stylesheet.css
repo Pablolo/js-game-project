@@ -103,10 +103,10 @@
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 1.2rem;
 	font-weight: bold;
-	background: black;
+	background: #121a21;
 	color: white;
 	position: absolute;
-	top: 380px;
+	top: 420px;
   right: 620px;
   width: 250px;
   height: 80px;
@@ -117,13 +117,13 @@
 
 #play:hover {
 	box-shadow: 0 3px gray;
-	top: 382px;
+	top: 422px;
 	cursor: pointer;
 }
 
 #play:active {
 	box-shadow: 0 0px gray;
-	top: 385px;
+	top: 425px;
 }
 
 /* Instructions */
@@ -138,8 +138,33 @@
 	right: 550px;
 	width: 400px;
 	position: absolute;
-	top: 150px;
+	top: 70px;
 	color: white;
+}
+
+#arrows {
+	position: absolute;
+	top: 180px;
+	width: 150px;
+	right: 675px;
+}
+
+#instructions-two {
+	font-size: 1.2rem;
+	text-align: center;
+	right: 550px;
+	width: 400px;
+	position: absolute;
+	top: 270px;
+	color: white;
+}
+
+.be-careful {
+	color: #e74c3c;
+}
+
+.percent-instructions {
+	color: #2ecc71;
 }
 
 /* Game Over Screen */
