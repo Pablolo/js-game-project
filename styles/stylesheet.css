@@ -1,6 +1,6 @@
 #container {
   margin: 0 auto;
-  width: 500px;
+  width: auto;
 }
 
 #body {
@@ -60,6 +60,20 @@
 }
 
 /* Canvas */
+
+#two-screens {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#coordinator-left {
+  margin: 0 auto;
+	border: 10px solid white; 
+	background-color: #1b2631;
+	position: relative;
+	border-radius: 5px;
+}
 
 #coordinator {
   margin: 0 auto;
@@ -171,7 +185,7 @@
 	position: absolute;
 	width: 100px;
 	top: 20px;
-	right: 250px;
+	right: 700px;
 }
 
 /* Game Over Screen */
