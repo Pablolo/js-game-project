@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let rightPerc = document.getElementById('right-final-number');
   let passedFailed = document.getElementById('passed-failed');
   let instructions = document.getElementById('instructions-together');
+  let counter = document.getElementById('timer-counter');
   ctx = canvas.getContext('2d');
 
   function alertWhite() {
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function hideInstructions() {
     playBtn.style = "display: none";
     instructions.style = "display: none";
+    counter.style = "display:block";
   }
 
   function createGameOverScreen() {

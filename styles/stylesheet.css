@@ -167,6 +167,13 @@
 	color: #2ecc71;
 }
 
+#timer-counter {
+	position: absolute;
+	width: 200px;
+	top: 230px;
+	right: 200px;
+}
+
 /* Game Over Screen */
 
 #gameover {
