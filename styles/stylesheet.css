@@ -22,7 +22,7 @@
 }
 
 .coordinator-logo-top {
-	margin-top: 80px;
+	margin-top: 60px;
 	font-size: 5rem;
 	color: white;
 }
@@ -35,7 +35,7 @@
 }
 
 #logo-image {
-	margin-top: 50px;
+	margin-top: 40px;
 	width: 270px;
 	height: 290px;
 	transform: rotate(-10deg);
@@ -107,7 +107,7 @@
 	color: white;
 	position: absolute;
 	top: 420px;
-  right: 620px;
+  right: 540px;
   width: 250px;
   height: 80px;
 	border: 6px solid white;
@@ -135,7 +135,7 @@
 #instructions {
 	font-size: 1.2rem;
 	text-align: center;
-	right: 550px;
+	right: 470px;
 	width: 400px;
 	position: absolute;
 	top: 70px;
@@ -146,16 +146,16 @@
 	position: absolute;
 	top: 180px;
 	width: 150px;
-	right: 675px;
+	right: 595px;
 }
 
 #instructions-two {
 	font-size: 1.2rem;
 	text-align: center;
-	right: 550px;
+	right: 470px;
 	width: 400px;
 	position: absolute;
-	top: 270px;
+	top: 280px;
 	color: white;
 }
 
@@ -188,7 +188,7 @@
 	font-weight: bold;
 	color: #121a21;
 	background-color: white;
-	margin: 0px 640px;
+	margin: 0px 580px;
 	-ms-transform: skew(-10deg, 0deg);
 	-webkit-transform: skew(-20deg, 0deg);
     transform: skew(-15deg, 0deg);
