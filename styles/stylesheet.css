@@ -17,7 +17,7 @@
 }
 
 .main-description {
-	font-size: 2rem;
+	font-size: 1.6rem;
 	color: white;
 }
 
@@ -46,6 +46,14 @@
 	justify-content: center;
 }
 
+.separator-line {
+	margin-top: 10px;
+	margin-bottom: 40px;
+	width: 50%; 
+	height: 1px; 
+	background: #fff
+}
+
 /* Canvas */
 
 #coordinator {
@@ -56,7 +64,7 @@
 	border-radius: 5px;
 }
 
-/* Button*/
+/* Buttons*/
 
 .btn {
 	border: none;
@@ -103,19 +111,17 @@
 /* Start Button*/
 
 #start {
+	color: white;
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 1.5rem;
 	font-weight: bold;
-	background: white;
-	/* color: white; */
-	/* position: absolute; */
-	/* top: 380px; */
-  /* right: 620px; */
+	background: #5b80a4;
   width: 250px;
   height: 80px;
-	border: 6px solid black;
+	border: 6px solid white;
 	border-radius: 4px;
 	box-shadow: 0 5px #34495e;
+	margin-top: 20px;
 }
 
 #start:hover {
@@ -163,6 +169,7 @@
 }
 
 #instructions {
+	font-size: 1.2rem;
 	text-align: center;
 	right: 550px;
 	width: 400px;
