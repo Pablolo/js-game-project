@@ -5,7 +5,7 @@ class Path {
     this.y = y;
     this.width = 80;
     this.height = 5;
-    this.color = "#7f8fa6";
+    this.color = "#636e72";
     this.intervalId = undefined;
   }
 

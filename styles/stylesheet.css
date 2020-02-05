@@ -4,7 +4,7 @@
 }
 
 #body {
-	background-color: white;
+	background-color: #121a21;
 	font-family: 'Courier New', Courier, monospace;
 }
 
@@ -18,6 +18,32 @@
 
 .main-description {
 	font-size: 2rem;
+	color: white;
+}
+
+.coordinator-logo-top {
+	margin-top: 80px;
+	font-size: 5rem;
+	color: white;
+}
+
+.coordinator-logo-bottom {
+	color: #bdc3c7;
+	margin-top: -40px;
+	margin-left: 290px;
+	font-size: 6rem;
+}
+
+.logo-image {
+	margin-top: 50px;
+	width: 270px;
+	height: 290px;
+	transform: rotate(-10deg);
+}
+
+.main-logo-container {
+	display: flex;
+	justify-content: center;
 }
 
 /* Canvas */
@@ -25,12 +51,12 @@
 #coordinator {
   margin: 0 auto;
 	border: 10px solid white; 
-	background-color: #2f3640;
+	background-color: #1b2631;
 	position: relative;
 	border-radius: 5px;
 }
 
-/* Start Button*/
+/* Button*/
 
 .btn {
 	border: none;
@@ -73,6 +99,34 @@
 	box-shadow: 0 0 #ab3c3c;
 	top: 6px;
 }
+
+/* Start Button*/
+
+#start {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1.5rem;
+	font-weight: bold;
+	background: white;
+	/* color: white; */
+	/* position: absolute; */
+	/* top: 380px; */
+  /* right: 620px; */
+  width: 250px;
+  height: 80px;
+	border: 6px solid black;
+	border-radius: 4px;
+	box-shadow: 0 5px #34495e;
+}
+
+#start:hover {
+	box-shadow: 0 3px #34495e;
+	top: -2px;
+}
+
+#start:active {
+	box-shadow: 0 0px #34495e;
+}
+
 
 /* Play when Ready Button*/
 
