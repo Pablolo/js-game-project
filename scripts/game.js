@@ -150,9 +150,9 @@ class Game {
 
   _passedOrFailed() {
     if (this.finalPercentage < 10) {
-      this.passedFailed.innerHTML = "Congratulations! Coordination test approved.";
+      this.passedFailed.innerHTML = "Congratulations!<br> Coordination test approved.";
     } else {
-      this.passedFailed.innerHTML = "You need better reflexes! Coordination test failed :(";
+      this.passedFailed.innerHTML = "You will need better reflexes!<br> Coordination test failed :(";
     }
   }
 

@@ -34,11 +34,16 @@
 	font-size: 6rem;
 }
 
-.logo-image {
+#logo-image {
 	margin-top: 50px;
 	width: 270px;
 	height: 290px;
 	transform: rotate(-10deg);
+}
+
+#logo-image:hover {
+	transform: rotate(0.5turn);
+	transition-duration: 2s;
 }
 
 .main-logo-container {
@@ -64,50 +69,6 @@
 	border-radius: 5px;
 }
 
-/* Buttons*/
-
-.btn {
-	border: none;
-	color: inherit;
-	background: none; 
-	cursor: pointer;
-	padding: 25px 80px;
-	display: inline-block;
-	margin: 15px 30px;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	font-weight: 700;
-	outline: none;
-	margin: 0 auto;
-	position: relative;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.btn-2 {
-	background: #cb4e4e;
-	color: #fff;
-	box-shadow: 0 6px #ab3c3c;
-	-webkit-transition: none;
-	-moz-transition: none;
-	transition: none;
-}
-
-.btn-2c {
-	border-radius: 5px;
-}
-
-.btn-2c:hover {
-	box-shadow: 0 4px #ab3c3c;
-	top: 2px;
-}
-
-.btn-2c:active {
-	box-shadow: 0 0 #ab3c3c;
-	top: 6px;
-}
-
 /* Start Button*/
 
 #start {
@@ -115,22 +76,24 @@
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 1.5rem;
 	font-weight: bold;
-	background: #5b80a4;
+	background: #34495e;
   width: 250px;
   height: 80px;
 	border: 6px solid white;
 	border-radius: 4px;
-	box-shadow: 0 5px #34495e;
+	box-shadow: 0 5px #95a5a6;
 	margin-top: 20px;
 }
 
 #start:hover {
-	box-shadow: 0 3px #34495e;
-	top: -2px;
+	box-shadow: 0 3px #95a5a6;
+	margin-top: 22px;
+	cursor: pointer;
 }
 
 #start:active {
-	box-shadow: 0 0px #34495e;
+	box-shadow: 0 0px #95a5a6;
+	margin-top: 24px;
 }
 
 
@@ -155,6 +118,7 @@
 #play:hover {
 	box-shadow: 0 3px gray;
 	top: 382px;
+	cursor: pointer;
 }
 
 #play:active {
@@ -184,8 +148,50 @@
 	display: flex;
 	flex-direction: column;
 	text-align: center;
+	color: white;
+	font-size: 1.3rem;
 }
 
-/* .gameover-title {
+#passed-failed {
+	margin-top: 100px;
+	font-size: 3rem;
+	color: #ced6e0;
+}
+
+#right-final-number {
+	font-size: 3rem;
+	font-weight: bold;
+	color: #121a21;
+	background-color: white;
+	margin: 0px 640px;
+	-ms-transform: skew(-10deg, 0deg);
+	-webkit-transform: skew(-20deg, 0deg);
+    transform: skew(-15deg, 0deg);
+}
+
+/* Try Again Button*/
+
+#tryagain {
 	color: white;
-} */
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1.5rem;
+	font-weight: bold;
+	background: #34495e;
+  width: 250px;
+  height: 80px;
+	border: 6px solid white;
+	border-radius: 4px;
+	box-shadow: 0 5px #95a5a6;
+	margin-top: 20px;
+}
+
+#tryagain:hover {
+	box-shadow: 0 3px #95a5a6;
+	margin-top: 22px;
+	cursor: pointer;
+}
+
+#tryagain:active {
+	box-shadow: 0 0px #95a5a6;
+	margin-top: 24px;
+}

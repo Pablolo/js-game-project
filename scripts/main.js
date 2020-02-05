@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function alertRed() {
-    canvas.style = "border: 10px solid #fc5c65"; //  #c0392b
+    canvas.style = "border: 10px solid #fc5c65"; 
   }
 
   function destroyStartScreen() {
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   function createGameOverScreen() {
     container.style = "display: none";
     gameOver.style = "display: block";
-    body.style = "background-color: white;"
+    body.style = "background-color: #121a21;"
   };
 
   playAgain.addEventListener('click', function() {
