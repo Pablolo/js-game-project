@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   function alertRed() {
-    canvas.style = "border: 10px solid #c0392b";
+    canvas.style = "border: 10px solid #fc5c65"; //  #c0392b
   }
 
   function destroyStartScreen() {
