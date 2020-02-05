@@ -169,9 +169,9 @@
 
 #timer-counter {
 	position: absolute;
-	width: 200px;
-	top: 230px;
-	right: 200px;
+	width: 100px;
+	top: 20px;
+	right: 220px;
 }
 
 /* Game Over Screen */
