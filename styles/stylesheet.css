@@ -26,6 +26,8 @@
   margin: 0 auto;
 	border: 10px solid white; 
 	background-color: black;
+	position: relative;
+	border-radius: 5px;
 }
 
 /* Start Button*/
@@ -70,6 +72,49 @@
 .btn-2c:active {
 	box-shadow: 0 0 #ab3c3c;
 	top: 6px;
+}
+
+/* Play when Ready Button*/
+
+#play {
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 1.2rem;
+	font-weight: bold;
+	background: black;
+	color: white;
+	position: absolute;
+	top: 380px;
+  right: 620px;
+  width: 250px;
+  height: 80px;
+	border: 6px solid white;
+	border-radius: 4px;
+	box-shadow: 0 5px gray;
+}
+
+#play:hover {
+	box-shadow: 0 3px gray;
+	top: 382px;
+}
+
+#play:active {
+	box-shadow: 0 0px gray;
+	top: 385px;
+}
+
+/* Instructions */
+
+.title-instructions {
+	font-size: 1.3rem;
+}
+
+#instructions {
+	text-align: center;
+	right: 550px;
+	width: 400px;
+	position: absolute;
+	top: 150px;
+	color: white;
 }
 
 /* Game Over Screen */

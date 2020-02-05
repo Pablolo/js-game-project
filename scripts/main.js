@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let body = document.getElementById('body');
   let rightPerc = document.getElementById('right-final-number');
   let passedFailed = document.getElementById('passed-failed');
+  let instructions = document.getElementById('instructions');
   ctx = canvas.getContext('2d');
 
   function alertWhite() {
@@ -28,6 +29,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     body.style = "background-color: black;"
   };
 
+  function hideReadyBtn() {
+    playBtn.style = "display: none";
+    instructions.style = "display: none";
+  }
+
   function createGameOverScreen() {
     container.style = "display: none";
     gameOver.style = "display: block";
@@ -43,6 +49,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   playBtn.addEventListener('click', function(){
+    hideReadyBtn();
     game.start();
   });
 
