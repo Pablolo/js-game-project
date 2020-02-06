@@ -5,7 +5,7 @@ class Player {
     this.width = 20;
     this.height = 20;
     this.color = "#f2ca26";
-    this.canvasWidth = canvasWidth;
+    this.canvasWidth = canvasWidth / 2;
   }
 
   goLeft() {

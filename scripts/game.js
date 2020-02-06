@@ -5,8 +5,8 @@ class Game {
     this.passedFailed = options.passedFailed;
     this.canvasWidth = options.canvasWidth;
     this.canvasHeight = options.canvasHeight;
-    this.playerL = new Player(23, 65, this.canvasWidth);
-    this.playerR = new Player(240, 360, this.canvasWidth);
+    this.playerL = new Player(240, 360, this.canvasWidth);
+    this.playerR = new Player(150, 360, this.canvasWidth);
     this.interval = undefined;
     this.leftPathArray = [];
     this.rightPathArray = [];
@@ -20,18 +20,18 @@ class Game {
   }
 
   _drawPlayer() {
-    this.ctx.fillStyle = this.playerR.color;  
-    this.ctx.fillRect(this.playerR.x, this.playerR.y, this.playerR.width, this.playerR.height);
+    this.ctx.fillStyle = this.playerL.color;  
+    this.ctx.fillRect(this.playerL.x, this.playerL.y, this.playerL.width, this.playerL.height);
   };
 
   _assignControlsToKeys() {
     document.addEventListener('keydown', e => {
       switch (e.keyCode) {
-        case 37: 
-          this.playerR.goLeft();
+        case 65: 
+          this.playerL.goLeft();
           break;
-        case 39: 
-          this.playerR.goRight();
+        case 68: 
+          this.playerL.goRight();
           break;
         case 32: // space bar 
           this.pause();
@@ -40,6 +40,23 @@ class Game {
       e.preventDefault();
     });
   };
+
+  // _assignControlsToKeysR() {
+  //   document.addEventListener('keydown', e => {
+  //     switch (e.keyCode) {
+  //       case 37: 
+  //         this.playerR.goLeft();
+  //         break;
+  //       case 39: 
+  //         this.playerR.goRight();
+  //         break;
+  //       case 32: // space bar 
+  //         this.pause();
+  //         break;
+  //     }
+  //     e.preventDefault();
+  //   });
+  // };
 
   _startLinePath() {
     for (let i = 0; i < 600; i++) { 
@@ -111,7 +128,7 @@ class Game {
   _checkCollision() {
     this.rightPathArray.forEach(element => {
       if (element.y > 350 && element.y < 370) {
-        if (this.player.x < element.x || this.player.x + this.player.width > element.x + element.width) { 
+        if (this.playerL.x < element.x || this.playerL.x + this.playerL.width > element.x + element.width) { 
           this.timeOut++;
           this.alert();
         } else {
@@ -122,7 +139,7 @@ class Game {
   }
 
   _cleanScreen() {
-    this.ctx.clearRect(0, 0, 500, 600);
+    this.ctx.clearRect(0, 0, 1200, 600);
   }
 
   _update() {
