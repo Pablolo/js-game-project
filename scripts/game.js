@@ -65,8 +65,11 @@ class Game {
     } 
   }
 
-  _generatePath(x) {  
+  _generatePathL(x) {  
     this.leftPathArray.push(new Path(this.ctx, x, 0)); 
+  };
+
+  _generatePathR(x) {  
     this.rightPathArray.push(new Path(this.ctx, x, 0)); 
   };
   
@@ -81,73 +84,73 @@ class Game {
   let lastItem = this.leftPathArray[this.leftPathArray.length - 1];
 
   if (this.frames >= 0 && this.frames < 160) {  // giro derecha 
-    this._generatePath(lastItem.x += 1); 
+    this._generatePathL(lastItem.x += 1); 
   } else if (this.frames > 155 && this.frames < 220) { // recto 
-    this._generatePath(lastItem.x);
+    this._generatePathL(lastItem.x);
   } else if (this.frames > 215 && this.frames < 490) { // giro izquierda 
-    this._generatePath(lastItem.x -= 1); 
+    this._generatePathL(lastItem.x -= 1); 
   } else if (this.frames > 485 && this.frames < 510) { // recto 
-    this._generatePath(lastItem.x);
+    this._generatePathL(lastItem.x);
   } else if (this.frames > 505 && this.frames < 700) { // giro derecha 
-    this._generatePath(lastItem.x += 1); 
+    this._generatePathL(lastItem.x += 1); 
   } else if (this.frames > 695 && this.frames < 795) { // recto 
-    this._generatePath(lastItem.x); 
+    this._generatePathL(lastItem.x); 
   } else if (this.frames > 790 && this.frames < 880) { // giro derecha 
-    this._generatePath(lastItem.x += 1); 
+    this._generatePathL(lastItem.x += 1); 
   } else if (this.frames > 875 && this.frames < 1020) { // recto 
-    this._generatePath(lastItem.x); 
+    this._generatePathL(lastItem.x); 
   } else if (this.frames > 1015 && this.frames < 1290) { // giro izquierda 
-    this._generatePath(lastItem.x -= 1); 
+    this._generatePathL(lastItem.x -= 1); 
   } else if (this.frames > 1285 && this.frames < 1350) { // giro derecha 
-    this._generatePath(lastItem.x += 1); 
+    this._generatePathL(lastItem.x += 1); 
   } else if (this.frames > 1345 && this.frames < 1390) { // recto 
-    this._generatePath(lastItem.x); 
+    this._generatePathL(lastItem.x); 
   } else if (this.frames > 1385 && this.frames < 1540) { // giro derecha 
-    this._generatePath(lastItem.x += 1); 
+    this._generatePathL(lastItem.x += 1); 
   } else if (this.frames > 1535 && this.frames < 1685) { // giro izquierda 
-    this._generatePath(lastItem.x -= 1); 
+    this._generatePathL(lastItem.x -= 1); 
   } else if (this.frames > 1680 && this.frames < 1850) { // recto 
-    this._generatePath(lastItem.x); 
+    this._generatePathL(lastItem.x); 
   } else if (this.frames == 1851) {
     this._resultScreen();
   }
 }
 
-// _generateTurnsR() {
-//   let lastItem = this.rightPathArray[this.rightPathArray.length - 1];
+_generateTurnsR() {
+  let lastItem = this.rightPathArray[this.rightPathArray.length - 1];
 
-//   if (this.frames >= 0 && this.frames < 160) {  // giro derecha 
-//     this._generatePath(lastItem.x += 1); 
-//   } else if (this.frames > 155 && this.frames < 220) { // recto 
-//     this._generatePath(lastItem.x);
-//   } else if (this.frames > 215 && this.frames < 490) { // giro izquierda 
-//     this._generatePath(lastItem.x -= 1); 
-//   } else if (this.frames > 485 && this.frames < 510) { // recto 
-//     this._generatePath(lastItem.x);
-//   } else if (this.frames > 505 && this.frames < 700) { // giro derecha 
-//     this._generatePath(lastItem.x += 1); 
-//   } else if (this.frames > 695 && this.frames < 795) { // recto 
-//     this._generatePath(lastItem.x); 
-//   } else if (this.frames > 790 && this.frames < 880) { // giro derecha 
-//     this._generatePath(lastItem.x += 1); 
-//   } else if (this.frames > 875 && this.frames < 1020) { // recto 
-//     this._generatePath(lastItem.x); 
-//   } else if (this.frames > 1015 && this.frames < 1290) { // giro izquierda 
-//     this._generatePath(lastItem.x -= 1); 
-//   } else if (this.frames > 1285 && this.frames < 1350) { // giro derecha 
-//     this._generatePath(lastItem.x += 1); 
-//   } else if (this.frames > 1345 && this.frames < 1390) { // recto 
-//     this._generatePath(lastItem.x); 
-//   } else if (this.frames > 1385 && this.frames < 1540) { // giro derecha 
-//     this._generatePath(lastItem.x += 1); 
-//   } else if (this.frames > 1535 && this.frames < 1685) { // giro izquierda 
-//     this._generatePath(lastItem.x -= 1); 
-//   } else if (this.frames > 1680 && this.frames < 1850) { // recto 
-//     this._generatePath(lastItem.x); 
-//   } else if (this.frames == 1851) {
-//     this._resultScreen();
-//   }
-// }
+  if (this.frames >= 0 && this.frames < 160) {  // giro derecha 
+    this._generatePathR(lastItem.x += 1); 
+  } else if (this.frames > 155 && this.frames < 220) { // recto 
+    this._generatePathR(lastItem.x);
+  } else if (this.frames > 215 && this.frames < 490) { // giro izquierda 
+    this._generatePathR(lastItem.x -= 1); 
+  } else if (this.frames > 485 && this.frames < 510) { // recto 
+    this._generatePathR(lastItem.x);
+  } else if (this.frames > 505 && this.frames < 700) { // giro derecha 
+    this._generatePathR(lastItem.x += 1); 
+  } else if (this.frames > 695 && this.frames < 795) { // recto 
+    this._generatePathR(lastItem.x); 
+  } else if (this.frames > 790 && this.frames < 880) { // giro derecha 
+    this._generatePathR(lastItem.x += 1); 
+  } else if (this.frames > 875 && this.frames < 1020) { // recto 
+    this._generatePathR(lastItem.x); 
+  } else if (this.frames > 1015 && this.frames < 1290) { // giro izquierda 
+    this._generatePathR(lastItem.x -= 1); 
+  } else if (this.frames > 1285 && this.frames < 1350) { // giro derecha 
+    this._generatePathR(lastItem.x += 1); 
+  } else if (this.frames > 1345 && this.frames < 1390) { // recto 
+    this._generatePathR(lastItem.x); 
+  } else if (this.frames > 1385 && this.frames < 1540) { // giro derecha 
+    this._generatePathR(lastItem.x += 1); 
+  } else if (this.frames > 1535 && this.frames < 1685) { // giro izquierda 
+    this._generatePathR(lastItem.x -= 1); 
+  } else if (this.frames > 1680 && this.frames < 1850) { // recto 
+    this._generatePathR(lastItem.x); 
+  } else if (this.frames == 1851) {
+    this._resultScreen();
+  }
+}
 
   _resultScreen() {
     window.cancelAnimationFrame(this.interval);
@@ -155,10 +158,10 @@ class Game {
     this._checkTimeOut(this.timeOut);
   }
 
-  _deletePath() {
-    for (let i = 0; i < this.leftPathArray.length; i++) {
-      if (this.leftPathArray[0].y >= this.canvasHeight) {
-        this.leftPathArray.shift();
+  _deletePath(array) {
+    for (let i = 0; i < array.length; i++) {
+      if (array[0].y >= this.canvasHeight) {
+        array.shift();
       } 
     }
   }
@@ -187,11 +190,12 @@ class Game {
     // draw
     this._movePathDown(this.leftPathArray);
     this._movePathDown(this.rightPathArray);
-    this._deletePath();
+    this._deletePath(this.leftPathArray);
+    this._deletePath(this.rightPathArray);
     this._drawPlayer(this.playerL);
     this._drawPlayer(this.playerR);  
     this._generateTurnsL();
-    // this._generateTurnsR();
+    this._generateTurnsR();
     this._checkCollision();
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
