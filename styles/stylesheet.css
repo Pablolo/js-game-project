@@ -120,8 +120,8 @@
 	background: #121a21;
 	color: white;
 	position: absolute;
-	top: 420px;
-  right: 540px;
+	top: 70%;
+  right: 25%;
   width: 250px;
   height: 80px;
 	border: 6px solid white;
@@ -131,19 +131,25 @@
 
 #play:hover {
 	box-shadow: 0 3px gray;
-	top: 422px;
+	top: 70.5%;
 	cursor: pointer;
 }
 
 #play:active {
 	box-shadow: 0 0px gray;
-	top: 425px;
+	top: 72%;
 }
 
 /* Instructions */
 
 #instructions-together {
-	background-color: gray;
+	background-color: #30336b;
+	width: 500px;
+	height: 500px;
+	border: 6px solid white;
+	position: absolute;
+	right: 33%;
+	top: 10%;
 }
 
 .title-instructions {
@@ -153,27 +159,27 @@
 #instructions {
 	font-size: 1.2rem;
 	text-align: center;
-	right: 470px;
+	right: 10%;
 	width: 400px;
 	position: absolute;
-	top: 70px;
+	top: 5%;
 	color: white;
 }
 
 #arrows {
 	position: absolute;
-	top: 180px;
+	top: 26%;
 	width: 150px;
-	right: 595px;
+	right: 35%;
 }
 
 #instructions-two {
 	font-size: 1.2rem;
 	text-align: center;
-	right: 470px;
+	right: 10%;
 	width: 400px;
 	position: absolute;
-	top: 280px;
+	top: 45%;
 	color: white;
 }
 
