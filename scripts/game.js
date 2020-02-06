@@ -17,6 +17,7 @@ class Game {
     this.alert = callback2;
     this.alertWhite = callback3;
     this.finalPercentage = 0;
+    this.keys = []; // 65 - A / 68 - D / 37 iz / 39 dcha / 32 pause
   }
 
   _drawPlayer(player) {
@@ -24,39 +25,29 @@ class Game {
     this.ctx.fillRect(player.x, player.y, player.width, player.height);
   };
 
-  _assignControlsToKeysL() {
-    document.addEventListener('keydown', e => {
-      switch (e.keyCode) {
-        case 65: 
-          this.playerL.goLeft();
-          break;
-        case 68: 
-          this.playerL.goRight();
-          break;
-        case 32: // space bar 
-          this.pause();
-          break;
-      }
-      e.preventDefault();
+  _assignControlsToKeys() {
+    document.addEventListener("keydown", (e) => {
+      this.keys[e.keyCode] = true;
+    });
+    
+    document.addEventListener("keyup", (e) => {
+      this.keys[e.keyCode] = false;
     });
   };
 
-  _assignControlsToKeysR() {
-    document.addEventListener('keydown', e => {
-      switch (e.keyCode) {
-        case 37: 
-          this.playerR.goLeft();
-          break;
-        case 39: 
-          this.playerR.goRight();
-          break;
-        case 32: // space bar 
-          this.pause();
-          break;
-      }
-      e.preventDefault();
-    });
-  };
+  _moveKeys() {
+    if (this.keys[65]) {
+      this.playerL.goLeft();
+    } else if (this.keys[68]) {
+      this.playerL.goRight();
+    } else if (this.keys[37]) {
+      this.playerR.goLeft();
+    } else if (this.keys[39]) {
+      this.playerR.goRight();
+    } else if (this.keys[32]) {
+      this.pause();
+    }
+  }
 
   _startLinePath() {
     for (let i = 0; i < 600; i++) { 
@@ -166,10 +157,10 @@ _generateTurnsR() {
     }
   }
 
-  _checkCollision() {
-    this.leftPathArray.forEach(element => {
+  _checkCollision(array, player) {
+    array.forEach(element => {
       if (element.y > 350 && element.y < 370) {
-        if (this.playerL.x < element.x || this.playerL.x + this.playerL.width > element.x + element.width) { 
+        if (player.x < element.x || player.x + player.width > element.x + element.width) { 
           this.timeOut++;
           this.alert();
         } else {
@@ -196,14 +187,17 @@ _generateTurnsR() {
     this._drawPlayer(this.playerR);  
     this._generateTurnsL();
     this._generateTurnsR();
-    this._checkCollision();
+    this._checkCollision(this.leftPathArray, this.playerL);
+    this._checkCollision(this.rightPathArray, this.playerR);
+    this._assignControlsToKeys();
+    this._moveKeys();
     if (!!this.interval) {
       this.interval = window.requestAnimationFrame(this._update.bind(this));
     }
   }
 
   _checkTimeOut(timeOut) { // calculate % of time out of the way (9800 max. timeout)
-    this.finalPercentage = ((timeOut / 9800) * 100).toFixed(1);
+    this.finalPercentage = ((timeOut / 19600) * 100).toFixed(1);
     console.log("% final:", this.finalPercentage);
     this._printPercentage();
     this._passedOrFailed();
@@ -231,8 +225,7 @@ _generateTurnsR() {
   };
 
   start() {
-    this._assignControlsToKeysL();
-    this._assignControlsToKeysR()
+
     this._startLinePath();
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };

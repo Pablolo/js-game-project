@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let passedFailed = document.getElementById('passed-failed');
   let instructions = document.getElementById('instructions-together');
   let counter = document.getElementById('timer-counter');
-  let newCounter = document.getElementById('timer-counter');
   
   ctx = canvas.getContext('2d');
 

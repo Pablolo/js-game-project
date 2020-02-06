@@ -9,14 +9,14 @@ class Player {
   }
 
   goLeft() {
-    this.x -= 10;
+    this.x -= 5;
     if (this.x < 0) {
       this.x += 10;
     }
   };
 
   goRight() {
-    this.x += 10;
+    this.x += 5;
     if (this.x > (this.canvasWidth - this.width)) { 
       this.x -= 10;
     }
