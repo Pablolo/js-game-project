@@ -44,10 +44,19 @@ class Game {
       this.playerR.goLeft();
     } else if (this.keys[39]) {
       this.playerR.goRight();
-    } else if (this.keys[32]) {
-      this.pause();
-    }
+    } 
   }
+
+  _assignControlToPause() {
+    document.addEventListener('keydown', e => {
+      switch (e.keyCode) {
+        case 32: // space bar 
+          this.pause();
+          break;
+      }
+      e.preventDefault();
+    });
+  };
 
   _startLinePath() {
     for (let i = 0; i < 600; i++) { 
@@ -225,7 +234,7 @@ _generateTurnsR() {
   };
 
   start() {
-
+    this._assignControlToPause();
     this._startLinePath();
     this.interval = window.requestAnimationFrame(this._update.bind(this));
   };
