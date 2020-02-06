@@ -1,11 +1,11 @@
 class Player {
-  constructor(options) {
-    this.x = 240;
-    this.y = 360; 
+  constructor(x, y, canvasWidth) {
+    this.x = x;
+    this.y = y; 
     this.width = 20;
     this.height = 20;
     this.color = "#f2ca26";
-    this.canvasWidth = options.canvasWidth;
+    this.canvasWidth = canvasWidth;
   }
 
   goLeft() {

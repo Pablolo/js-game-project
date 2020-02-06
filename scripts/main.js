@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let passedFailed = document.getElementById('passed-failed');
   let instructions = document.getElementById('instructions-together');
   let counter = document.getElementById('timer-counter');
+  let newCounter = document.getElementById('timer-counter');
+  
   ctx = canvas.getContext('2d');
 
   function alertWhite() {
@@ -58,10 +60,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
   game = new Game({
     ctx,
     canvasHeight: canvas.height,
+    canvasWidth: canvas.width,
     rightPerc,
     passedFailed,
-  }, new Player({
-    canvasWidth: canvas.width,
-  }), createGameOverScreen, alertRed, alertWhite);
+  }, createGameOverScreen, alertRed, alertWhite);
 
 })

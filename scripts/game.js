@@ -1,12 +1,15 @@
 class Game {
-  constructor(options, player, callback1, callback2, callback3) {
+  constructor(options, callback1, callback2, callback3) {
     this.ctx = options.ctx;
     this.rightPerc = options.rightPerc;
     this.passedFailed = options.passedFailed;
+    this.canvasWidth = options.canvasWidth;
     this.canvasHeight = options.canvasHeight;
-    this.player = player;
+    this.playerL = new Player(23, 65, this.canvasWidth);
+    this.playerR = new Player(240, 360, this.canvasWidth);
     this.interval = undefined;
-    this.pathArray = [];
+    this.leftPathArray = [];
+    this.rightPathArray = [];
     this.frames = 0;
     this.timeOut = 0;
     this.paused = false;
@@ -17,18 +20,18 @@ class Game {
   }
 
   _drawPlayer() {
-    this.ctx.fillStyle = this.player.color;  
-    this.ctx.fillRect(this.player.x, this.player.y, this.player.width, this.player.height);
+    this.ctx.fillStyle = this.playerR.color;  
+    this.ctx.fillRect(this.playerR.x, this.playerR.y, this.playerR.width, this.playerR.height);
   };
 
   _assignControlsToKeys() {
     document.addEventListener('keydown', e => {
       switch (e.keyCode) {
         case 37: 
-          this.player.goLeft();
+          this.playerR.goLeft();
           break;
         case 39: 
-          this.player.goRight();
+          this.playerR.goRight();
           break;
         case 32: // space bar 
           this.pause();
@@ -40,23 +43,23 @@ class Game {
 
   _startLinePath() {
     for (let i = 0; i < 600; i++) { 
-      this.pathArray.push(new Path(this.ctx, 210, i));
+      this.rightPathArray.push(new Path(this.ctx, 210, i));
     } 
   }
 
   _generatePath(x) {  
-    this.pathArray.push(new Path(this.ctx, x, 0)); 
+    this.rightPathArray.push(new Path(this.ctx, x, 0)); 
   };
   
   _movePathDown() { 
-    this.pathArray.forEach(element => {
+    this.rightPathArray.forEach(element => {
       element.move();
       element.draw();
     })
   }
 
   _generateTurns() {
-  let lastItem = this.pathArray[this.pathArray.length - 1];
+  let lastItem = this.rightPathArray[this.rightPathArray.length - 1];
 
   if (this.frames >= 0 && this.frames < 160) {  // giro derecha 
     this._generatePath(lastItem.x += 1); 
@@ -98,15 +101,15 @@ class Game {
   }
 
   _deletePath() {
-    for (let i = 0; i < this.pathArray.length; i++) {
-      if (this.pathArray[0].y >= this.canvasHeight) {
-        this.pathArray.shift();
+    for (let i = 0; i < this.rightPathArray.length; i++) {
+      if (this.rightPathArray[0].y >= this.canvasHeight) {
+        this.rightPathArray.shift();
       } 
     }
   }
 
   _checkCollision() {
-    this.pathArray.forEach(element => {
+    this.rightPathArray.forEach(element => {
       if (element.y > 350 && element.y < 370) {
         if (this.player.x < element.x || this.player.x + this.player.width > element.x + element.width) { 
           this.timeOut++;
