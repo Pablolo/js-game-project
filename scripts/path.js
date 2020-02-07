@@ -3,7 +3,7 @@ class Path {
     this.ctx = ctx;
     this.x = x;
     this.y = y;
-    this.width = 120;
+    this.width = 90;
     this.height = 5;
     this.color = "#636e72";
     this.intervalId = undefined;

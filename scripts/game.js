@@ -121,31 +121,33 @@ _generateTurnsR() {
 
   if (this.frames >= 0 && this.frames < 160) {  // giro derecha 
     this._generatePathR(lastItem.x += 1); 
-  } else if (this.frames > 155 && this.frames < 220) { // recto 
-    this._generatePathR(lastItem.x);
-  } else if (this.frames > 215 && this.frames < 490) { // giro izquierda 
-    this._generatePathR(lastItem.x -= 1); 
-  } else if (this.frames > 485 && this.frames < 510) { // recto 
-    this._generatePathR(lastItem.x);
-  } else if (this.frames > 505 && this.frames < 700) { // giro derecha 
-    this._generatePathR(lastItem.x += 1); 
-  } else if (this.frames > 695 && this.frames < 795) { // recto 
+  } else if (this.frames > 155 && this.frames < 220) { // izqda 
+    this._generatePathR(lastItem.x -= 1);
+  } else if (this.frames > 215 && this.frames < 420) { // recto
     this._generatePathR(lastItem.x); 
-  } else if (this.frames > 790 && this.frames < 880) { // giro derecha 
+  } else if (this.frames > 415 && this.frames < 510) { // izqda 
+    this._generatePathR(lastItem.x -= 1);
+  } else if (this.frames > 505 && this.frames < 660) { // derecha 
     this._generatePathR(lastItem.x += 1); 
-  } else if (this.frames > 875 && this.frames < 1020) { // recto 
+  } else if (this.frames > 655 && this.frames < 735) { // recto
     this._generatePathR(lastItem.x); 
-  } else if (this.frames > 1015 && this.frames < 1290) { // giro izquierda 
+  } else if (this.frames > 730 && this.frames < 950) { // izqda
     this._generatePathR(lastItem.x -= 1); 
-  } else if (this.frames > 1285 && this.frames < 1350) { // giro derecha 
-    this._generatePathR(lastItem.x += 1); 
-  } else if (this.frames > 1345 && this.frames < 1390) { // recto 
+  } else if (this.frames > 875 && this.frames < 1020) { // recto
     this._generatePathR(lastItem.x); 
-  } else if (this.frames > 1385 && this.frames < 1540) { // giro derecha 
-    this._generatePathR(lastItem.x += 1); 
-  } else if (this.frames > 1535 && this.frames < 1685) { // giro izquierda 
+  } else if (this.frames > 1015 && this.frames < 1110) { // izqda
     this._generatePathR(lastItem.x -= 1); 
-  } else if (this.frames > 1680 && this.frames < 1850) { // recto 
+  } else if (this.frames > 1105 && this.frames < 1300) { // dcha
+    this._generatePathR(lastItem.x += 1); 
+  } else if (this.frames > 1295 && this.frames < 1330) { // 
+    this._generatePathR(lastItem.x); 
+  } else if (this.frames > 1325 && this.frames < 1350) { // 
+    this._generatePathR(lastItem.x += 1); 
+  } else if (this.frames > 1345 && this.frames < 1585) { // 
+    this._generatePathR(lastItem.x -= 1); 
+  } else if (this.frames > 1580 && this.frames < 1685) { // 
+    this._generatePathR(lastItem.x += 1); 
+  } else if (this.frames > 1680 && this.frames < 1850) { // 
     this._generatePathR(lastItem.x); 
   } else if (this.frames == 1851) {
     this._resultScreen();
