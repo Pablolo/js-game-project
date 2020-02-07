@@ -6,7 +6,7 @@ class Game {
     this.canvasWidth = options.canvasWidth;
     this.canvasHeight = options.canvasHeight;
     this.playerL = new Player(240, 360, this.canvasWidth / 2);
-    this.playerR = new Player(970, 360, this.canvasWidth);
+    this.playerR = new Player(870, 360, this.canvasWidth);
     this.interval = undefined;
     this.leftPathArray = [];
     this.rightPathArray = [];
@@ -17,7 +17,7 @@ class Game {
     this.alert = callback2;
     this.alertWhite = callback3;
     this.finalPercentage = 0;
-    this.keys = []; // 65 - A / 68 - D / 37 iz / 39 dcha / 32 pause
+    this.keys = []; 
   }
 
   _drawPlayer(player) {
