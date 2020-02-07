@@ -5,6 +5,8 @@ class Game {
     this.passedFailed = options.passedFailed;
     this.canvasWidth = options.canvasWidth;
     this.canvasHeight = options.canvasHeight;
+    this.sfxAlert = options.sfxAlert;
+    this.sfxAlertL = options.sfxAlertL;
     this.playerL = new Player(240, 360, this.canvasWidth / 2);
     this.playerR = new Player(870, 360, this.canvasWidth);
     this.interval = undefined;
@@ -14,7 +16,7 @@ class Game {
     this.timeOut = 0;
     this.paused = false;
     this.gameOver = callback1;
-    this.alert = callback2;
+    this.alertRed = callback2;
     this.alertWhite = callback3;
     this.finalPercentage = 0;
     this.keys = []; 
@@ -139,15 +141,15 @@ _generateTurnsR() {
     this._generatePathR(lastItem.x -= 1); 
   } else if (this.frames > 1105 && this.frames < 1300) { // dcha
     this._generatePathR(lastItem.x += 1); 
-  } else if (this.frames > 1295 && this.frames < 1330) { // 
+  } else if (this.frames > 1295 && this.frames < 1330) { // recto
     this._generatePathR(lastItem.x); 
-  } else if (this.frames > 1325 && this.frames < 1350) { // 
+  } else if (this.frames > 1325 && this.frames < 1350) { // dcha
     this._generatePathR(lastItem.x += 1); 
-  } else if (this.frames > 1345 && this.frames < 1585) { // 
+  } else if (this.frames > 1345 && this.frames < 1585) { // izqda
     this._generatePathR(lastItem.x -= 1); 
-  } else if (this.frames > 1580 && this.frames < 1685) { // 
+  } else if (this.frames > 1580 && this.frames < 1685) { // dcha
     this._generatePathR(lastItem.x += 1); 
-  } else if (this.frames > 1680 && this.frames < 1850) { // 
+  } else if (this.frames > 1680 && this.frames < 1850) { // recto
     this._generatePathR(lastItem.x); 
   } else if (this.frames == 1851) {
     this._resultScreen();
@@ -168,14 +170,46 @@ _generateTurnsR() {
     }
   }
 
-  _checkCollision(array, player) {
-    array.forEach(element => {
+  // _checkCollision(array, player) {
+  //   array.forEach(element => {
+  //     if (element.y > 350 && element.y < 370) {
+  //       if (player.x < element.x || player.x + player.width > element.x + element.width) { 
+  //         this.timeOut++;
+  //         this.alertRed();
+  //         this.sfxAlert.play();
+  //       } else {
+  //         this.alertWhite();
+  //         this.sfxAlert.pause();
+  //       }
+  //     }
+  //   })
+  // }
+
+  _checkCollisionL() {
+    this.leftPathArray.forEach(element => {
       if (element.y > 350 && element.y < 370) {
-        if (player.x < element.x || player.x + player.width > element.x + element.width) { 
+        if (this.playerL.x < element.x || this.playerL.x + this.playerL.width > element.x + element.width) { 
           this.timeOut++;
-          this.alert();
+          this.alertRed();
+          this.sfxAlertL.play();
         } else {
           this.alertWhite();
+          this.sfxAlertL.pause();
+        }
+      }
+    })
+  }
+
+  _checkCollisionR() {
+    this.rightPathArray.forEach(element => {
+      if (element.y > 350 && element.y < 370) {
+        if (this.playerR.x < element.x || this.playerR.x + this.playerR.width > element.x + element.width) { 
+          this.timeOut++;
+          this.alertRed();
+          this.sfxAlert.play();
+        } else {
+          this.alertWhite();
+          this.sfxAlert.pause();
         }
       }
     })
@@ -198,8 +232,10 @@ _generateTurnsR() {
     this._drawPlayer(this.playerR);  
     this._generateTurnsL();
     this._generateTurnsR();
-    this._checkCollision(this.leftPathArray, this.playerL);
-    this._checkCollision(this.rightPathArray, this.playerR);
+    // this._checkCollision(this.leftPathArray, this.playerL);
+    // this._checkCollision(this.rightPathArray, this.playerR);
+    this._checkCollisionL();
+    this._checkCollisionR();
     this._assignControlsToKeys();
     this._moveKeys();
     if (!!this.interval) {

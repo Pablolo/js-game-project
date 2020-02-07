@@ -1,5 +1,5 @@
-let ctx;
-let game;
+// let ctx;
+// let game;
 
 document.addEventListener('DOMContentLoaded', (event) => {
   let canvas = document.getElementById('coordinator');
@@ -14,8 +14,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let passedFailed = document.getElementById('passed-failed');
   let instructions = document.getElementById('instructions-together');
   let counter = document.getElementById('timer-counter');
+  let sfxAlert = new Audio("music/SFX_Car Horn Honk 51.mp3");
+  let sfxAlertL = new Audio("music/SFX_Car Horn Honk 51.mp3"); // had to duplicate or didnt work properly
+  let audio = new Audio("Change My Style - Glow Machine.mp3");
+  audio.play();
   
-  ctx = canvas.getContext('2d');
+  let ctx = canvas.getContext('2d');
 
   function alertWhite() {
     canvas.style = "border: 10px solid white";
@@ -56,12 +60,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     game.start();
   });
 
-  game = new Game({
+  let game = new Game({
     ctx,
     canvasHeight: canvas.height,
     canvasWidth: canvas.width,
     rightPerc,
     passedFailed,
+    sfxAlert,
+    sfxAlertL,
   }, createGameOverScreen, alertRed, alertWhite);
 
 })
