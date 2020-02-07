@@ -215,6 +215,7 @@
 	color: #121a21;
 	background-color: white;
 	margin: 0px 560px;
+	width: 180px;
 	-ms-transform: skew(-10deg, 0deg);
 	-webkit-transform: skew(-20deg, 0deg);
     transform: skew(-15deg, 0deg);
@@ -225,20 +226,20 @@
 }
 
 .final-description {
-	margin-left: 7%;
+	margin-left: 2%;
 }
 
 #approved {
 	width: 400px;
 	position: absolute;
-	margin-left: 10%;
+	margin-left: 1%;
 	z-index: -1;
 }
 
 #rejected {
 	width: 450px;
 	position: absolute;
-	margin-left: 5%;
+	margin-left: 1%;
 	z-index: -1;
 }
 
