@@ -163,9 +163,9 @@
 
 #arrows {
 	position: absolute;
-	top: 29%;
-	width: 250px;
-	right: 26%;
+	top: 31%;
+	width: 260px;
+	right: 25%;
 }
 
 #instructions-two {
@@ -214,7 +214,7 @@
 	font-weight: bold;
 	color: #121a21;
 	background-color: white;
-	margin: 0px 580px;
+	margin: 0px 570px;
 	-ms-transform: skew(-10deg, 0deg);
 	-webkit-transform: skew(-20deg, 0deg);
     transform: skew(-15deg, 0deg);
@@ -232,6 +232,13 @@
 	width: 400px;
 	position: absolute;
 	margin-left: 10%;
+	z-index: -1;
+}
+
+#rejected {
+	width: 450px;
+	position: absolute;
+	margin-left: 5%;
 	z-index: -1;
 }
 
