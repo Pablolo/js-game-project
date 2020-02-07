@@ -1,5 +1,3 @@
-// let ctx;
-// let game;
 
 document.addEventListener('DOMContentLoaded', (event) => {
   let canvas = document.getElementById('coordinator');
@@ -14,9 +12,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let passedFailed = document.getElementById('passed-failed');
   let instructions = document.getElementById('instructions-together');
   let counter = document.getElementById('timer-counter');
+  
   let sfxAlert = new Audio("music/SFX_Car Horn Honk 51.mp3");
   let sfxAlertL = new Audio("music/SFX_Car Horn Honk 51.mp3"); // had to duplicate or didnt work properly
-  let audio = new Audio("Change My Style - Glow Machine.mp3");
+  let audio = document.getElementById('main-song');
   audio.play();
   
   let ctx = canvas.getContext('2d');
