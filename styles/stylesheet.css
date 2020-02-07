@@ -204,17 +204,17 @@
 }
 
 #passed-failed {
-	margin-top: 100px;
+	margin-top: 80px;
 	font-size: 3rem;
 	color: #ced6e0;
 }
 
 #right-final-number {
-	font-size: 3rem;
+	font-size: 2.9rem;
 	font-weight: bold;
 	color: #121a21;
 	background-color: white;
-	margin: 0px 570px;
+	margin: 0px 560px;
 	-ms-transform: skew(-10deg, 0deg);
 	-webkit-transform: skew(-20deg, 0deg);
     transform: skew(-15deg, 0deg);

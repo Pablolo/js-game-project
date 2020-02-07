@@ -253,7 +253,7 @@ _generateTurnsR() {
   }
 
   _printPercentage() {
-    this.rightPerc.innerHTML = `${this.finalPercentage} %`;
+    this.rightPerc.innerHTML = ` ${this.finalPercentage} % `;
   }
 
   _passedOrFailed() {
