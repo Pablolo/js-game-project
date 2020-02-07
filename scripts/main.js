@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let passedFailed = document.getElementById('passed-failed');
   let instructions = document.getElementById('instructions-together');
   let counter = document.getElementById('timer-counter');
+  let logoImage = document.getElementById('logo-image');
   
   let sfxAlert = new Audio("music/SFX_Car Horn Honk 51.mp3");
   let sfxAlertL = new Audio("music/SFX_Car Horn Honk 51.mp3"); // had to duplicate or didnt work properly
@@ -19,6 +20,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
   audio.play();
   
   let ctx = canvas.getContext('2d');
+
+  setTimeout(function() {
+    logoImage.style = "transform: rotate(-10deg); transition-duration: 2s;"
+  }, 1500);
 
   function alertWhite() {
     canvas.style = "border: 10px solid white";

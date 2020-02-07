@@ -38,12 +38,7 @@
 	margin-top: 40px;
 	width: 270px;
 	height: 290px;
-	transform: rotate(-10deg);
-}
-
-#logo-image:hover {
 	transform: rotate(0.5turn);
-	transition-duration: 2s;
 }
 
 .main-logo-container {
