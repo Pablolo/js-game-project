@@ -220,6 +220,21 @@
     transform: skew(-15deg, 0deg);
 }
 
+.aproved-rejected-container {
+	display: flex;
+}
+
+.final-description {
+	margin-left: 7%;
+}
+
+#approved {
+	width: 400px;
+	position: absolute;
+	margin-left: 10%;
+	z-index: -1;
+}
+
 /* Try Again Button */
 
 #tryagain {

@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
   let instructions = document.getElementById('instructions-together');
   let counter = document.getElementById('timer-counter');
   let logoImage = document.getElementById('logo-image');
+  let approvedLogo = document.getElementById('approved');
+  let rejectedLogo = document.getElementById('rejected');
   
   let sfxAlert = new Audio("music/SFX_Car Horn Honk 51.mp3");
   let sfxAlertL = new Audio("music/SFX_Car Horn Honk 51.mp3"); // had to duplicate or didnt work properly
@@ -70,6 +72,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     canvasWidth: canvas.width,
     rightPerc,
     passedFailed,
+    approvedLogo,
+    rejectedLogo,
     sfxAlert,
     sfxAlertL,
   }, createGameOverScreen, alertRed, alertWhite);

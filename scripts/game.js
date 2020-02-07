@@ -5,6 +5,8 @@ class Game {
     this.passedFailed = options.passedFailed;
     this.canvasWidth = options.canvasWidth;
     this.canvasHeight = options.canvasHeight;
+    this.approvedLogo = options.approvedLogo;
+    this.rejectedLogo = options.rejectedLogo;
     this.sfxAlert = options.sfxAlert;
     this.sfxAlertL = options.sfxAlertL;
     this.playerL = new Player(240, 360, this.canvasWidth / 2);
@@ -257,8 +259,10 @@ _generateTurnsR() {
   _passedOrFailed() {
     if (this.finalPercentage < 10) {
       this.passedFailed.innerHTML = "Congratulations!<br> Coordination test approved.";
+      this.approvedLogo.style = "display: block;";
     } else {
       this.passedFailed.innerHTML = "You will need better reflexes!<br> Coordination test failed :(";
+      this.rejectedLogo.style = "display: block;";
     }
   }
 

@@ -38,9 +38,15 @@
 
   <div id="gameover" style="display: none">
     <h2 id="passed-failed"></h2>
-    <h2>You just spent...</h2>
-    <h2 id="right-final-number"></h2>
-    <h2>of the total time out of the road.</h2>
+    <div class="aproved-rejected-container">
+      <img id="approved" src="/images/green-approved-stamp.png" alt="approved" style="display:none;">
+      <img id="rejected" src="/images/rejected1.png" alt="rejected" style="display:none;">
+      <div class="final-description">
+        <h2>You just spent...</h2>
+        <h2 id="right-final-number"></h2>
+        <h2>of the total time out of the road.</h2>
+      </div>
+    </div>
     <button id="tryagain">Try Again!</button>
   </div>
   <script src="scripts/game.js"></script>
